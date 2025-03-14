@@ -1,0 +1,435 @@
+﻿Specimen,Type,Collection,"Approximate Age (calBP, 95% CI)",Plastome Haplotypes,Haploblock Genotyping,Population Structure,SMC++,Nuclear Coverage (X),Plastome Coverage (X),SRA
+ann01_cwIA,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,3.39,2038.11,SAMN07457703
+ann01_cwIA,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,3.39,2038.11,SAMN07457703
+ann04_nwAR,Wild,USA - Arkansas,Modern,Y,Y,Y,Y - ENA,2.88,1609.84,SAMN07457704
+ann05_ccNM,Wild,USA - New Mexico,Modern,Y,Y,Y,N,3.5,1923.35,SAMN07457705
+ann06_seWY,Wild,USA - Wyoming,Modern,N - admix,Y,N - admix,N,1.79,1170.9,SAMN07457706
+ANN0810,Wild,USA - California,Modern,Y,Y,Y,N,6.34,538.83,SAMN11403846
+ANN0820,Wild,USA - California,Modern,Y,Y,Y,N,3.9,551.83,SAMN11403856
+ANN0830,Wild,USA - California,Modern,Y,Y,Y,N,6.46,846.33,SAMN11403866
+ANN0835,Wild,USA - California,Modern,Y,Y,Y,N,4.14,357.33,SAMN11403871
+ANN0849,Wild,USA - California,Modern,Y,Y,Y,N,5.58,775.71,SAMN11403885
+ANN0854,Wild,USA - California,Modern,Y,Y,Y,N,4.94,585.69,SAMN11403890
+ANN0867,Wild,USA - California,Modern,Y,Y,Y,N,4.9,585.66,SAMN11403903
+ANN0874,Wild,USA - California,Modern,Y,Y,Y,N,4.02,313.21,SAMN11403910
+ANN0880,Wild,USA - California,Modern,Y,Y,Y,N,3.28,410.32,SAMN11403916
+ANN0882,Wild,USA - California,Modern,Y,Y,Y,N,3.53,319.01,SAMN11403918
+ANN0898,Wild,USA - California,Modern,Y,Y,Y,N,3.66,612.72,SAMN11403934
+ANN0908,Wild,USA - Arizona,Modern,Y,Y,Y,N,5.69,542.51,SAMN11403944
+ANN0918,Wild,USA - Arizona,Modern,Y,Y,Y,N,3.79,427.96,SAMN11403954
+ANN0927,Wild,USA - Arizona,Modern,Y,Y,Y,N,4.49,578.08,SAMN11403963
+ANN0931,Wild,USA - Arizona,Modern,Y,Y,Y,N,3.82,335.5,SAMN11403967
+ANN0946,Wild,USA - Arizona,Modern,Y,Y,Y,N,4.9,452.67,SAMN11403982
+ANN0956,Wild,USA - New Mexico,Modern,Y,Y,Y,N,3.95,363.02,SAMN11403992
+ANN0957,Wild,USA - New Mexico,Modern,Y,Y,Y,N,3.6,324.36,SAMN11403993
+ANN0959,Wild,USA - New Mexico,Modern,Y,Y,Y,N,4.77,541.24,SAMN11403995
+ANN0962,Wild,USA - New Mexico,Modern,Y,Y,Y,N,3.6,283.31,SAMN11403998
+ANN0963,Wild,USA - New Mexico,Modern,Y,Y,Y,N,3.56,373.92,SAMN11403999
+ANN0964,Wild,USA - New Mexico,Modern,Y,Y,Y,N,3.55,401.86,SAMN11404000
+ANN0972,Wild,USA - New Mexico,Modern,Y,Y,Y,N,4.22,509.46,SAMN11404008
+ANN0975,Wild,USA - New Mexico,Modern,Y,Y,Y,N,4.05,401.58,SAMN11404011
+ANN0978,Wild,USA - New Mexico,Modern,Y,Y,Y,N,3.21,297.47,SAMN11404014
+ANN0981,Wild,USA - New Mexico,Modern,Y,Y,Y,N,5.36,485.95,SAMN11404017
+ANN0985,Wild,USA - New Mexico,Modern,Y,Y,Y,N,6.55,540.96,SAMN11404021
+ANN0986,Wild,USA - New Mexico,Modern,Y,Y,Y,N,6.62,616.48,SAMN11404022
+ANN0992,Wild,USA - Colorado,Modern,Y,Y,Y,N,3.77,429.79,SAMN11404028
+ANN0996,Wild,USA - Colorado,Modern,Y,Y,Y,N,4.51,476.78,SAMN11404032
+ANN0997,Wild,USA - Colorado,Modern,Y,Y,Y,N,3.95,441.02,SAMN11404033
+ann10_ccIL,Wild,USA - Illinois,Modern,Y,Y,Y,Y - ENA,3.11,2259.95,SAMN07457708
+ann10_ccIL,Wild,USA - Illinois,Modern,Y,Y,Y,Y - ENA,3.11,2259.95,SAMN07457708
+ANN1002,Wild,USA - Colorado,Modern,Y,Y,Y,N,3.71,529.02,SAMN11404038
+ANN1003,Wild,USA - Colorado,Modern,Y,Y,Y,N,3.18,336.03,SAMN11404039
+ANN1004,Wild,USA - Colorado,Modern,Y,Y,Y,N,3.91,389.32,SAMN11404040
+ANN1011,Wild,USA - Colorado,Modern,Y,Y,Y,N,6.51,743.3,SAMN11404047
+ANN1012,Wild,USA - Colorado,Modern,Y,Y,Y,N,6.27,647.94,SAMN11404048
+ANN1019,Wild,USA - Colorado,Modern,Y,Y,Y,N,4.3,457.75,SAMN11404055
+ANN1029,Wild,USA - Nevada,Modern,Y,Y,Y,N,4.28,395.92,SAMN11404065
+ANN1040,Wild,USA - Nevada,Modern,Y,Y,Y,N,3.81,385.84,SAMN11404076
+ANN1046,Wild,USA - Nevada,Modern,N - admix,Y,N - admix,N,4.99,540.5,SAMN11404082
+ANN1053,Wild,USA - Utah,Modern,Y,Y,Y,N,5.35,684.92,SAMN11404089
+ANN1062,Wild,USA - Utah,Modern,Y,Y,Y,N,4.63,867.19,SAMN11404098
+ANN1073,Wild,USA - Utah,Modern,Y,Y,Y,N,4.21,415.83,SAMN11404109
+ANN1083,Wild,USA - Utah,Modern,Y,Y,Y,N,5.78,663.08,SAMN11404119
+ANN1095,Wild,USA - Utah,Modern,Y,Y,Y,N,6.47,941.84,SAMN11404131
+ANN1106,Wild,USA - Utah,Modern,Y,Y,Y,N,3.73,565.55,SAMN11404142
+ANN1115,Wild,USA - Utah,Modern,Y,Y,Y,N,3.51,284.73,SAMN11404151
+ANN1127,Wild,USA - Utah,Modern,Y,Y,Y,N,5.96,580.26,SAMN11404163
+ANN1134,Wild,USA - Utah,Modern,Y,Y,Y,N,9.87,1576.85,SAMN11404170
+ANN1143,Wild,USA - Utah,Modern,Y,Y,Y,N,5.2,585.38,SAMN11404179
+ANN1151,Wild,USA - Wyoming,Modern,Y,Y,Y,N,3.44,341.1,SAMN11404187
+ANN1152,Wild,USA - Wyoming,Modern,Y,Y,Y,N,3.65,345.39,SAMN11404188
+ANN1153,Wild,USA - Wyoming,Modern,Y,Y,Y,N,2.86,255.75,SAMN11404189
+ANN1154,Wild,USA - Wyoming,Modern,Y,Y,Y,N,3.48,311.52,SAMN11404190
+ANN1155,Wild,USA - Wyoming,Modern,Y,Y,Y,N,2.94,364.64,SAMN11404191
+ANN1156,Wild,USA - Wyoming,Modern,Y,Y,Y,N,2.64,319.4,SAMN11404192
+ANN1157,Wild,USA - Wyoming,Modern,Y,Y,Y,N,2.68,426.81,SAMN11404193
+ANN1159,Wild,USA - Wyoming,Modern,Y,Y,Y,N,2.39,303.52,SAMN11404195
+ANN1160,Wild,USA - Wyoming,Modern,Y,Y,Y,N,3.53,466.3,SAMN11404196
+ANN1162,Wild,USA - Colorado,Modern,Y,Y,Y,N,3.03,385.01,SAMN11404198
+ANN1164,Wild,USA - Colorado,Modern,Y,Y,Y,N,2.97,615.73,SAMN11404200
+ANN1169,Wild,USA - Colorado,Modern,Y,Y,Y,N,3.76,334.86,SAMN11404205
+ANN1171,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.21,349.25,SAMN11404207
+ANN1171,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.21,349.25,SAMN11404207
+ANN1172,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.58,361.13,SAMN11404208
+ANN1172,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.58,361.13,SAMN11404208
+ANN1173,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.37,447.33,SAMN11404209
+ANN1173,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.37,447.33,SAMN11404209
+ANN1174,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.83,407.49,SAMN11404210
+ANN1174,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.83,407.49,SAMN11404210
+ANN1175,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.06,376.94,SAMN11404211
+ANN1175,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.06,376.94,SAMN11404211
+ANN1176,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.34,400.66,SAMN11404212
+ANN1176,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.34,400.66,SAMN11404212
+ANN1177,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.58,369.81,SAMN11404213
+ANN1177,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.58,369.81,SAMN11404213
+ANN1178,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.47,380.89,SAMN11404214
+ANN1178,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.47,380.89,SAMN11404214
+ANN1179,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.81,259.9,SAMN11404215
+ANN1179,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.81,259.9,SAMN11404215
+ANN1180,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.8,241.81,SAMN11404216
+ANN1180,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.8,241.81,SAMN11404216
+ANN1181,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.85,277.6,SAMN11404217
+ANN1181,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.85,277.6,SAMN11404217
+ANN1182,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.95,277.99,SAMN11404218
+ANN1182,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.95,277.99,SAMN11404218
+ANN1183,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.29,332.36,SAMN11404219
+ANN1183,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.29,332.36,SAMN11404219
+ANN1184,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.86,250.7,SAMN11404220
+ANN1184,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.86,250.7,SAMN11404220
+ANN1185,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.79,307.35,SAMN11404221
+ANN1185,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.79,307.35,SAMN11404221
+ANN1186,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.62,308.6,SAMN11404222
+ANN1186,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.62,308.6,SAMN11404222
+ANN1187,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,4.14,493.97,SAMN11404223
+ANN1187,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,4.14,493.97,SAMN11404223
+ANN1188,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,4,416.41,SAMN11404224
+ANN1188,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,4,416.41,SAMN11404224
+ANN1189,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.68,325.03,SAMN11404225
+ANN1189,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.68,325.03,SAMN11404225
+ANN1190,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.03,567.64,SAMN11404226
+ANN1190,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.03,567.64,SAMN11404226
+ANN1191,Wild,USA - Kansas,Modern,Y,Y,Y,N,2.84,261.39,SAMN11404227
+ANN1191,Wild,USA - Kansas,Modern,Y,Y,Y,N,2.84,261.39,SAMN11404227
+ANN1192,Wild,USA - Kansas,Modern,Y,Y,Y,N,2.29,204.89,SAMN11404228
+ANN1192,Wild,USA - Kansas,Modern,Y,Y,Y,N,2.29,204.89,SAMN11404228
+ANN1193,Wild,USA - Kansas,Modern,Y,Y,Y,N,3.21,283.8,SAMN11404229
+ANN1193,Wild,USA - Kansas,Modern,Y,Y,Y,N,3.21,283.8,SAMN11404229
+ANN1194,Wild,USA - Kansas,Modern,Y,Y,Y,N,2.28,236.19,SAMN11404230
+ANN1194,Wild,USA - Kansas,Modern,Y,Y,Y,N,2.28,236.19,SAMN11404230
+ANN1195,Wild,USA - Kansas,Modern,Y,Y,Y,N,4.53,471.64,SAMN11404231
+ANN1195,Wild,USA - Kansas,Modern,Y,Y,Y,N,4.53,471.64,SAMN11404231
+ANN1196,Wild,USA - Kansas,Modern,Y,Y,Y,N,2.71,298.62,SAMN11404232
+ANN1196,Wild,USA - Kansas,Modern,Y,Y,Y,N,2.71,298.62,SAMN11404232
+ANN1197,Wild,USA - Kansas,Modern,Y,Y,Y,N,3.57,513.84,SAMN11404233
+ANN1197,Wild,USA - Kansas,Modern,Y,Y,Y,N,3.57,513.84,SAMN11404233
+ANN1198,Wild,USA - Kansas,Modern,Y,Y,Y,N,5.29,596.9,SAMN11404234
+ANN1198,Wild,USA - Kansas,Modern,Y,Y,Y,N,5.29,596.9,SAMN11404234
+ANN1199,Wild,USA - Kansas,Modern,Y,Y,Y,N,3.36,382.61,SAMN11404235
+ANN1199,Wild,USA - Kansas,Modern,Y,Y,Y,N,3.36,382.61,SAMN11404235
+ANN1200,Wild,USA - Kansas,Modern,Y,Y,Y,N,2.59,378.15,SAMN11404236
+ANN1200,Wild,USA - Kansas,Modern,Y,Y,Y,N,2.59,378.15,SAMN11404236
+ANN1201,Wild,USA - Oklahoma,Modern,Y,Y,Y,Y - ENA,2.75,337.17,SAMN11404237
+ANN1202,Wild,USA - Oklahoma,Modern,Y,Y,Y,Y - ENA,3.25,455.33,SAMN11411059
+ANN1203,Wild,USA - Oklahoma,Modern,Y,Y,Y,Y - ENA,3.72,340.5,SAMN11411060
+ANN1204,Wild,USA - Oklahoma,Modern,Y,Y,Y,Y - ENA,3.64,377.59,SAMN11411061
+ANN1205,Wild,USA - Oklahoma,Modern,Y,Y,Y,N,2.96,291.97,SAMN11411062
+ANN1206,Wild,USA - Oklahoma,Modern,Y,Y,Y,Y - ENA,2.91,256.15,SAMN11411063
+ANN1207,Wild,USA - Oklahoma,Modern,Y,Y,Y,Y - ENA,2.86,313.91,SAMN11411064
+ANN1208,Wild,USA - Oklahoma,Modern,Y,Y,Y,Y - ENA,2.68,334.11,SAMN11411065
+ANN1209,Wild,USA - Oklahoma,Modern,Y,Y,Y,Y - ENA,3.08,262.54,SAMN11411066
+ANN1210,Wild,USA - Oklahoma,Modern,Y,Y,Y,Y - ENA,2.41,279.05,SAMN11411067
+ANN1216,Wild,USA - Texas,Modern,Y,Y,Y,N,3.4,553.44,SAMN11411073
+ANN1218,Wild,USA - Texas,Modern,Y,Y,Y,N,3.51,343.47,SAMN11411075
+ANN1219,Wild,USA - Texas,Modern,Y,Y,Y,N,3.41,351.67,SAMN11411076
+Ann1238,Wild,USA - Nebraska,Modern,Y,Y,Y,N,87.56,8615.88,To Be Submitted
+ANN1260,Wild,USA - California,Modern,Y,Y,Y,N,6.06,632.94,SAMN11411117
+ANN1268,Wild,USA - Arizona,Modern,Y,Y,Y,N,3.73,352.51,SAMN11411125
+ANN1273,Wild,USA - Arizona,Modern,Y,Y,Y,N,5.84,820.51,SAMN11411130
+ANN1284,Wild,USA - Arizona,Modern,Y,Y,Y,N,3.49,299.78,SAMN11411141
+ANN1296,Wild,USA - New Mexico,Modern,Y,Y,Y,N,3.35,437.69,SAMN11411153
+ANN1297,Wild,USA - New Mexico,Modern,Y,Y,Y,N,3.27,419.13,SAMN11411154
+ANN1300,Wild,USA - New Mexico,Modern,Y,Y,Y,N,2.86,460.86,SAMN11411157
+ANN1301,Wild,USA - New Mexico,Modern,Y,Y,Y,N,3.84,257.85,SAMN11411158
+ANN1309,Wild,USA - New Mexico,Modern,Y,Y,Y,N,3.39,367.86,SAMN11411166
+ANN1310,Wild,USA - New Mexico,Modern,Y,Y,Y,N,6.39,902.94,SAMN11411167
+ANN1311,Wild,USA - Texas,Modern,Y,Y,Y,N,4.15,400.64,SAMN11411168
+ANN1316,Wild,USA - Texas,Modern,Y,Y,Y,N,4.69,526.42,SAMN11411173
+ANN1319,Wild,USA - Texas,Modern,Y,Y,Y,N,4.51,390.98,SAMN11411176
+ANN1322,Wild,USA - Texas,Modern,Y,Y,Y,N,3.86,679.87,SAMN11411179
+ANN1328,Wild,USA - Texas,Modern,Y,Y,Y,N,3.35,281.17,SAMN11411185
+ANN1330,Wild,USA - Texas,Modern,Y,Y,Y,N,3.15,292.51,SAMN11411187
+ANN1331,H_annuus_spp_texanus,USA - Texas,Modern,Y,N,Y,N,3.28,260.97,SAMN11411188
+ANN1341,H_annuus_spp_texanus,USA - Texas,Modern,Y,N,Y,N,3.43,321.02,SAMN11411198
+ANN1407,H_annuus_spp_texanus,USA - Texas,Modern,Y,N,Y,N,3.13,479.16,SAMN11411264
+ANN1419,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,3,298.67,SAMN12696331
+ANN1419,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,3,298.67,SAMN12696331
+ANN1420,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,2.77,296.9,SAMN12696332
+ANN1420,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,2.77,296.9,SAMN12696332
+ANN1439,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.41,232.2,SAMN12696333
+ANN1439,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.41,232.2,SAMN12696333
+ANN1501,Wild,Canada - Saskatchewan,Modern,Y,Y,Y,Y - ENA,1.89,288.24,SAMN12696334
+ann20_seAZ,Wild,USA - Arizona,Modern,N - admix,Y,N - admix,N,2.25,1797.55,SAMN07457709
+ann28_swSK,Wild,Canada - Saskatchewan,Modern,Y,Y,Y,Y - ENA,1.91,1458.95,SAMN07457711
+ann29_neSD,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,3.12,2262.53,SAMN07457712
+ann34_cwKS,Wild,USA - Kansas,Modern,Y,Y,Y,N,2.93,1323.83,SAMN07457715
+ann34_cwKS,Wild,USA - Kansas,Modern,Y,Y,Y,N,2.93,1323.83,SAMN07457715
+ann39_ncNE,Wild,USA - Nebraska,Modern,Y,Y,Y,Y - ENA,2.71,1061.96,SAMN07457716
+ann44_ccCA,Wild,USA - California,Modern,N - admix,Y,N - admix,N,5.64,2670.93,SAMN07457718
+annMex_A1516,Wild_mexico,"Mexico, maintained by USDA",Modern,Y,N,Y,N,3.03,3629.08,To Be Submitted
+annMex_A1517,Wild_mexico,"Mexico, maintained by USDA",Modern,N - admix,N,N - admix,N,3.72,4582.21,To Be Submitted
+annMex_A1572,Wild_mexico,"Mexico, maintained by USDA",Modern,Y,N,Y,N,3.47,6156.35,To Be Submitted
+annMex_A1574,Wild_mexico,"Mexico, maintained by USDA",Modern,N - admix,N,N - admix,N,3.43,3202.91,To Be Submitted
+annMex_Ann261,Wild_mexico,"Mexico, maintained by USDA",Modern,Y,N,Y,N,3.19,3866.62,To Be Submitted
+Anzac_Pueblo,TV,USA - New Mexico,Modern,Y,Y,Y,Y - TV,5.38,3300.65,SAMN07457748
+ARG0054,H_argophyllus,USA - Texas,Modern,Y,N,Y,N,5.2,503.94,SAMN11411321
+ARG0169,H_argophyllus,USA - Texas,Modern,Y,N,Y,N,4.81,569.7,SAMN11411435
+ARG0204,H_argophyllus,USA - Texas,Modern,Y,N,Y,N,7.37,818.92,SAMN11417024
+Ari_Broad,Ethnographic_TV,USA - North Dakota,unknown,Y,Y,Y,Y - TV,3.84,304.23,SAMN08191079
+Ari_Man,Ethnographic_TV,USA - Dakotas,91,Y,Y,Y,Y - TV,4.25,544.09,SAMN08191080
+Arikara,TV,USA - Dakotas,Modern,Y,Y,Y,Y - TV,5.18,1114.07,SAMN07457759
+Arikara_122976,Ethnographic_TV,USA - North Dakota,101,Y,Y,N,N,0.25,5.07,SAMN08191076
+Arikara_126306,Ethnographic_TV,USA - North Dakota,100,Y,Y,N,N,0.39,50.36,SAMN08191077
+Arikara_14042_874,Ethnographic_TV,USA - North Dakota,92,Y,Y,N,N,0.65,42.71,SAMN08191078
+HA124,Cultivated,-,Modern,Y,Y,Y,N,14,10439.59,SAMN06140280
+HA207,Cultivated,-,Modern,Y,Y,Y,N,14.34,8473.93,SAMN06140328
+HA259,Cultivated,-,Modern,Y,Y,Y,N,14.18,9508.34,SAMN06140339
+HA314,Cultivated,-,Modern,Y,Y,Y,N,13.96,6932.79,SAMN06140281
+HA316,Cultivated,-,Modern,Y,Y,Y,N,13.25,4842.7,SAMN06140343
+HA323,Cultivated,-,Modern,Y,Y,Y,N,15.23,15574.88,SAMN06140270
+HA380,Cultivated,-,Modern,Y,Y,Y,N,14.93,8517.57,SAMN06140273
+HA404,Cultivated,-,Modern,Y,Y,Y,N,13.3,6096.23,SAMN06140276
+HA433,Cultivated,-,Modern,Y,Y,Y,N,12.83,5262.48,SAMN06140317
+HA442,Cultivated,-,Modern,Y,Y,Y,N,12.56,7722.07,SAMN06140291
+HA821,Cultivated,-,Modern,Y,Y,Y,N,14.4,6958.52,SAMN07334135
+HA89,Cultivated,-,Modern,Y,Y,Y,N,12.05,7714.85,SAMN06140323
+Havasupai,TV,USA,Modern,Y,Y,Y,Y - TV,5.59,1897.37,SAMN07457797
+Hidatsa,TV,USA - New Mexico,Modern,Y,Y,Y,Y - TV,4.96,2321.24,SAMN07457798
+Hopi,TV,USA - Arizona,Modern,Y,Y,Y,Y - TV,20.3,10240.65,SAMN07457799
+Hopi_dye,TV,USA,Modern,Y,Y,Y,Y - TV,5.23,2853.1,SAMN07334066
+Hopi_mapping,TV,USA - Arizona,Modern,Y,Y,Y,Y - TV,13.63,7113.84,SAMN06140348
+IA1W_1,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,2.59,870.4,SAMN07513009
+IA1W_1,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,2.59,870.4,SAMN07513009
+IA1W_11R,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,5.88,912.35,SAMN07513013
+IA1W_11R,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,5.88,912.35,SAMN07513013
+IA1W_15,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,3.72,523.19,SAMN07513015
+IA1W_15,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,3.72,523.19,SAMN07513015
+IA1W_2,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,5.94,1677.47,SAMN07513010
+IA1W_2,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,5.94,1677.47,SAMN07513010
+IA1W_21,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,4.24,1681.66,SAMN07513016
+IA1W_21,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,4.24,1681.66,SAMN07513016
+IA1W_28,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,1.57,490.48,SAMN07513017
+IA1W_28,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,1.57,490.48,SAMN07513017
+IA1W_33,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,4.1,616.59,SAMN07513018
+IA1W_33,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,4.1,616.59,SAMN07513018
+IA1W_39,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,4.84,691.52,SAMN07513019
+IA1W_39,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,4.84,691.52,SAMN07513019
+IA1W_4,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,4.59,776.32,SAMN07513011
+IA1W_4,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,4.59,776.32,SAMN07513011
+IA1W_5,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,8.52,1037.49,SAMN07513012
+IA1W_5,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,8.52,1037.49,SAMN07513012
+IA2W_14,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,1.58,374.21,SAMN07513034
+IA2W_14,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,1.58,374.21,SAMN07513034
+IA2W_16,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,2.91,513.03,SAMN07513035
+IA2W_16,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,2.91,513.03,SAMN07513035
+IA2W_29,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,2.01,268.4,SAMN07513037
+IA2W_29,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,2.01,268.4,SAMN07513037
+IA2W_37,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,1.8,461.16,SAMN07513039
+IA2W_37,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,1.8,461.16,SAMN07513039
+IA2W_37R,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,1.88,337.62,SAMN07513038
+IA2W_37R,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,1.88,337.62,SAMN07513038
+IA2W_38,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,3.73,1002.74,SAMN07513040
+IA2W_38,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,3.73,1002.74,SAMN07513040
+IA2W_39,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,2.3,405.65,SAMN07513041
+IA2W_39,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,2.3,405.65,SAMN07513041
+IA2W_6,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,1.97,759.29,SAMN07513031
+IA2W_6,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,1.97,759.29,SAMN07513031
+IA2W_7,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,3.58,709.13,SAMN07513032
+IA2W_7,Wild,USA - Iowa,Modern,Y,Y,Y,Y - ENA,3.58,709.13,SAMN07513032
+KS1W_19,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.54,699.72,SAMN07513058
+KS1W_19,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.54,699.72,SAMN07513058
+KS1W_2,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,5.72,1013.46,SAMN07513055
+KS1W_2,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,5.72,1013.46,SAMN07513055
+KS1W_24,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,4.41,1251.43,SAMN07513059
+KS1W_24,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,4.41,1251.43,SAMN07513059
+KS1W_26,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.12,552.36,SAMN07513060
+KS1W_26,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.12,552.36,SAMN07513060
+KS1W_27,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.62,471.09,SAMN07513061
+KS1W_27,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.62,471.09,SAMN07513061
+KS1W_29,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.57,444.13,SAMN07513062
+KS1W_29,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.57,444.13,SAMN07513062
+KS1W_3,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,4.56,722.31,SAMN07513056
+KS1W_3,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,4.56,722.31,SAMN07513056
+KS1W_32,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,5.75,1731.59,SAMN07513063
+KS1W_32,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,5.75,1731.59,SAMN07513063
+KS1W_35,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,5.21,1435.32,SAMN07513064
+KS1W_35,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,5.21,1435.32,SAMN07513064
+KS1W_40,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,1.96,696.62,SAMN07513065
+KS1W_40,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,1.96,696.62,SAMN07513065
+KS1W_9,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.79,625.26,SAMN07513057
+KS1W_9,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.79,625.26,SAMN07513057
+KS2W_12,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.09,391.03,SAMN07513081
+KS2W_12,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.09,391.03,SAMN07513081
+KS2W_14,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.49,775.59,SAMN07513082
+KS2W_14,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.49,775.59,SAMN07513082
+KS2W_15,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,5.28,1913.71,SAMN07513084
+KS2W_15,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,5.28,1913.71,SAMN07513084
+KS2W_15R,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,1.42,238.58,SAMN07513083
+KS2W_15R,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,1.42,238.58,SAMN07513083
+KS2W_24,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,4.41,1251.42,SAMN07513085
+KS2W_24,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,4.41,1251.42,SAMN07513085
+KS2W_32,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,6.85,1445.63,SAMN07513086
+KS2W_32,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,6.85,1445.63,SAMN07513086
+KS2W_35,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,5.51,1106.98,SAMN07513087
+KS2W_35,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,5.51,1106.98,SAMN07513087
+KS2W_6,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,5.48,729.21,SAMN07513077
+KS2W_6,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,5.48,729.21,SAMN07513077
+KS2W_6_1R,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.84,1218.09,SAMN07513078
+KS2W_6_1R,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,3.84,1218.09,SAMN07513078
+KS2W_8,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,4.8,1061.56,SAMN07513079
+KS2W_8,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,4.8,1061.56,SAMN07513079
+KS2W_9,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.08,448.85,SAMN07513080
+KS2W_9,Wild,USA - Kansas,Modern,Y,Y,Y,Y - ENA,2.08,448.85,SAMN07513080
+Laguna_Pueblo,TV,USA - New Mexico,Modern,Y,Y,Y,Y - TV,5.3,1673.52,SAMN07457800
+Mandan1_PPN046,TV,USA,Modern,Y,Y,Y,Y - TV,7.82,7318.37,SAMN07334042
+Mandan2,TV,USA,Modern,Y,Y,Y,Y - TV,5.63,3349.82,SAMN07457801
+MB1W_11,Wild,Canada - Manitoba,Modern,Y,Y,Y,Y - ENA,1.33,267.54,SAMN07513096
+MB1W_14,Wild,Canada - Manitoba,Modern,Y,Y,Y,Y - ENA,1.53,274.29,SAMN07513097
+MB1W_16,Wild,Canada - Manitoba,Modern,Y,Y,Y,Y - ENA,2.21,300.22,SAMN07513098
+MB1W_16B,Wild,Canada - Manitoba,Modern,Y,Y,Y,Y - ENA,3.05,544.3,SAMN07513099
+MB1W_20,Wild,Canada - Manitoba,Modern,Y,Y,Y,Y - ENA,2.05,410.9,SAMN07513100
+MB1W_30,Wild,Canada - Manitoba,Modern,Y,Y,Y,Y - ENA,1.96,563.06,SAMN07513101
+MB1W_31,Wild,Canada - Manitoba,Modern,Y,Y,Y,Y - ENA,1.99,299.72,SAMN07513102
+MB1W_39,Wild,Canada - Manitoba,Modern,Y,Y,Y,Y - ENA,2.05,352.5,SAMN07513219
+MB1W_40,Wild,Canada - Manitoba,Modern,Y,Y,Y,Y - ENA,4.22,1017.82,SAMN07513104
+MB1W_8,Wild,Canada - Manitoba,Modern,Y,Y,Y,Y - ENA,2.33,373.35,SAMN07513095
+MexCult1,TV_Mexico,Mexico - Tarahumara,Modern,Y,Y,Y,Y - TV,3.66,4310.19,SAMN07457802
+MexCult14,TV_Mexico,Mexico -Tzeltal,Modern,Y,Y,Y,N,2.59,3824.89,SAMN07457803
+MexCult15,TV_Mexico,Mexico - Mixe,Modern,Y,Y,Y,Y - TV,2.25,3292.36,SAMN07457804
+MexCult3,TV_Mexico,Mexico - Nahua,Modern,Y,Y,Y,Y - TV,5.19,7715.11,SAMN07457805
+MexCult6,TV_Mexico,Mexico - Nahua,Modern,Y,Y,Y,Y - TV,4.93,7380.13,SAMN07457806
+MexCult7,TV_Mexico,Mexico - Tzeltal,Modern,Y,Y,Y,N,5.26,7997.91,SAMN07457807
+MexCult9,TV_Mexico,Mexico - Nahua,Modern,Y,Y,Y,Y - TV,3.8,6575.32,SAMN07457808
+MO1W_11,Wild,USA - Missouri,Modern,Y,Y,Y,Y - ENA,1.51,166.07,SAMN07513214
+MO1W_15,Wild,USA - Missouri,Modern,Y,Y,Y,Y - ENA,1.53,262.57,SAMN07513215
+MO1W_16,Wild,USA - Missouri,Modern,Y,Y,Y,Y - ENA,2.52,341.17,SAMN07513216
+MO1W_2,Wild,USA - Missouri,Modern,Y,Y,Y,Y - ENA,1.74,223.27,SAMN07513211
+MO1W_2R,Wild,USA - Missouri,Modern,Y,Y,Y,Y - ENA,1.45,200.29,SAMN07513210
+MO1W_3,Wild,USA - Missouri,Modern,Y,Y,Y,Y - ENA,3.74,548.54,SAMN07513212
+MO1W_33,Wild,USA - Missouri,Modern,Y,Y,Y,Y - ENA,2.72,505.4,SAMN07513217
+MO1W_38,Wild,USA - Missouri,Modern,Y,Y,Y,Y - ENA,6.14,938.92,SAMN07513218
+MO1W_39,Wild,USA - Missouri,Modern,Y,Y,Y,N,1.91,391.72,SAMN07513219
+MO1W_7,Wild,USA - Missouri,Modern,Y,Y,Y,Y - ENA,2.13,537.84,SAMN07513213
+ND1W_12,Wild,USA - North Dakota,Modern,Y,Y,Y,Y - ENA,2.4,556.11,SAMN07513231
+ND1W_20,Wild,USA - North Dakota,Modern,Y,Y,Y,Y - ENA,1.99,274.57,SAMN07513232
+ND1W_22,Wild,USA - North Dakota,Modern,Y,Y,Y,Y - ENA,1.22,275.71,SAMN07513233
+ND1W_25,Wild,USA - North Dakota,Modern,Y,Y,Y,Y - ENA,1.88,460.98,SAMN07513234
+ND1W_27,Wild,USA - North Dakota,Modern,Y,Y,Y,Y - ENA,2.57,363.3,SAMN07513235
+ND1W_31,Wild,USA - North Dakota,Modern,Y,Y,Y,Y - ENA,2.56,1085.73,SAMN07513236
+ND1W_33,Wild,USA - North Dakota,Modern,Y,Y,Y,Y - ENA,1.81,301.82,SAMN07513237
+ND1W_36,Wild,USA - North Dakota,Modern,Y,Y,Y,Y - ENA,1.61,397.23,SAMN07513238
+ND1W_38,Wild,USA - North Dakota,Modern,Y,Y,Y,Y - ENA,4.21,1491.37,SAMN07513239
+ND1W_6,Wild,USA - North Dakota,Modern,N - admix,Y,N - admix,N,5.33,889.86,SAMN07513230
+NIV1468,H_niveus_ssp_canescens,USA - Arizona,Modern,Y,N,Y,N,2.01,3254.82,To Be Submitted
+NIV1487,H_niveus_ssp_canescens,USA - Arizona,Modern,Y,N,Y,N,2.19,982.98,To Be Submitted
+Paiute,Ethnographic_TV,USA - Nevada,~100,Y,Y,Y,Y - TV,2.6,419.32,SAMN08191081
+PET0316,H_petiolaris_ssp_fallax,USA - Arizona,Modern,Y,N,Y,N,4.89,563.51,SAMN11417264
+PET0372,H_petiolaris_ssp_fallax,USA - Colorado,Modern,Y,N,Y,N,4.03,444,SAMN11417320
+PET0473N,H_petiolaris_ssp_petiolaris,USA - Colorado,Modern,Y,N,Y,N,4.01,371.42,SAMN11414975
+PET0532,H_petiolaris_ssp_petiolaris,USA - Kansas,Modern,Y,N,Y,N,3.09,235.49,SAMN11415033
+PET0580,H_petiolaris_ssp_petiolaris,USA - Oklahoma,Modern,Y,N,Y,N,3.77,317.8,SAMN11415076
+PET0636,H_petiolaris_ssp_fallax,USA - Arizona,Modern,Y,N,Y,N,4.25,601.33,SAMN11415128
+PET0654,H_niveus_ssp_canescens,USA - New Mexico,Modern,Y,N,Y,N,4.76,527.31,SAMN11415146
+PET0712,H_niveus_ssp_canescens,USA - New Mexico,Modern,Y,N,Y,N,4.11,559.27,SAMN11415201
+PET0732,H_niveus_ssp_canescens,USA - Texas,Modern,Y,N,Y,N,3.87,881.56,SAMN11415220
+Pueblo,TV,USA - New Mexico,Modern,Y,Y,Y,Y - TV,5.55,2144.08,SAMN07457823
+RHA271,Cultivated,-,Modern,Y,Y,Y,N,15,7066.25,SAMN06140326
+RHA309,Cultivated,-,Modern,Y,Y,Y,N,11.24,4928.85,SAMN06140293
+RHA310,Cultivated,-,Modern,Y,Y,Y,N,13.63,4947.45,SAMN06140329
+RHA324,Cultivated,-,Modern,Y,Y,Y,N,12.63,3090.37,SAMN06140286
+RHA328,Cultivated,-,Modern,Y,Y,Y,N,14.23,4140.85,SAMN06140342
+RHA354,Cultivated,-,Modern,Y,Y,Y,N,11.67,3166.61,SAMN06140308
+RHA358,Cultivated,-,Modern,Y,Y,Y,N,9.8,5060.06,SAMN07334012
+RHA362,Cultivated,-,Modern,Y,Y,Y,N,13.14,5968.83,SAMN06140310
+RHA397,Cultivated,-,Modern,Y,Y,Y,N,11.04,8041.15,SAMN06140278
+RHA408,Cultivated,-,Modern,Y,Y,Y,N,15.68,5804.98,SAMN06140331
+RHA426,Cultivated,-,Modern,Y,Y,Y,N,12.13,3068.38,SAMN06140334
+RHA857,Cultivated,-,Modern,Y,Y,Y,N,11.17,4993.06,SAMN06140304
+San Ildefonso Pueblo (SIP),Ethnographic_TV,USA - New Mexico,unknown,Y,N,N,N,0.52,9.2,SAMN08191082
+SD1W_13,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,4.7,917.13,SAMN07513271
+SD1W_14,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,2.44,715.59,SAMN07513272
+SD1W_15,Wild,USA - South Dakota,Modern,N - admix,Y,N - admix,N,3.46,809.11,SAMN07513273
+SD1W_20,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,2.78,445.18,SAMN07513274
+SD1W_21,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,1.9,456.16,SAMN07513275
+SD1W_21B,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,1.78,590.83,SAMN07513276
+SD1W_35,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,2.33,459.77,SAMN07513277
+SD1W_4,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,3.18,656.04,SAMN07513269
+SD1W_6,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,2.4,575.7,SAMN07513270
+SD2W_14,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,2.06,356.6,SAMN07513291
+SD2W_15,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,2.29,341.21,SAMN07513292
+SD2W_18,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,2.9,465.69,SAMN07513293
+SD2W_19,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,1.82,268.74,SAMN07513294
+SD2W_21,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,2.1,310.43,SAMN07513295
+SD2W_23,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,3.67,1313.68,SAMN07513296
+SD2W_23R,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,2.29,919.94,SAMN07513297
+SD2W_27,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,4.28,589.75,SAMN07513298
+SD2W_30,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,1.93,433.36,SAMN07513299
+SD2W_38,Wild,USA - South Dakota,Modern,N - admix,Y,N - admix,N,1.97,328.47,SAMN07513300
+SD2W_40,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,1.97,489.9,SAMN07513301
+SD2W_5,Wild,USA - South Dakota,Modern,Y,Y,Y,Y - ENA,1.52,202.6,SAMN07513290
+Se_Purp,Ethnographic_TV,USA - North Dakota,93,Y,Y,Y,Y - TV,4.09,982.59,SAMN08191085
+Se_Strip_682a,Ethnographic_TV,USA - North Dakota,93,Y,Y,Y,Y - TV,4,1190.26,SAMN08191086
+Se_Strip_682b,Ethnographic_TV,USA - North Dakota,93,Y,Y,N,N,0.52,68.65,SAMN08191087
+Seneca,TV,USA,Modern,Y,Y,Y,Y - TV,2.76,1225.13,SAMN07457824
+Seneca_137749,Ethnographic_TV,USA - New York,99,Y,Y,Y,Y - TV,4.12,1220.48,SAMN08191083
+SF_01,Archaeological,USA - Kentucky - Newt Kash,3324 - 3079,N,Y,N,N,0.02,3.19,To Be Submitted
+SF_03,Archaeological,USA - Ozarks - Putnam,656 - 532,Y,Y,N,N,0.11,38.92,To Be Submitted
+SF_04,Archaeological,USA - Ozarks - Montgomery,1523 - 1306,N,Y,N,N,0.04,12.29,To Be Submitted
+SF_05,Archaeological,USA - Ozarks -Craddock,635 - 511,Y,Y,N,N,0.11,18.99,To Be Submitted
+SF_06,Archaeological,USA - Ozarks - Green Bluff,3455 - 3374,Y,Y,N,N,0.06,21.49,To Be Submitted
+SF_07,Archaeological,USA - Ozarks - Eden's Bluff,1770 - 1559,Y,Y,N,N,0.14,30.64,To Be Submitted
+SF_11a,Archaeological,USA - Kentucky - Newt Kash,3210 - 3061,Y,Y,N,N,0.02,32.61,To Be Submitted
+SF_11c,Archaeological,USA - Kentucky - Newt Kash,unknown,N,N,N,N,0.06,35.87,To Be Submitted
+SF_12,Archaeological,USA - Ozarks - Putnam,636 - 531,Y,Y,N,N,0.04,5.8,To Be Submitted
+SF_17,Archaeological,USA - Kentucky - Newt Kash,unknown,Y,N,N,N,0.01,22.77,To Be Submitted
+SF_19,Archaeological,USA - Ozarks - Montgomery,1380 - 1304,Y,Y,N,N,0.16,62.6,To Be Submitted
+SF_20,Archaeological,USA - Ozarks - Poole,500-320,Y,N,N,N,0.01,1.71,To Be Submitted
+SF_21,Archaeological,USA - Ozarks - Eden's Bluff,1825 - 1618,Y,Y,N,N,0.01,1.71,SAMN08191065
+SF_22,Archaeological,USA - Ozarks - Eden's Bluff,1868 - 1701,Y,Y,N,N,0.06,23.97,SAMN08191066
+SF_23,Archaeological,USA - Ozarks - Eden's Bluff,1810 - 1571,Y,Y,N,N,0.07,18.09,SAMN08191067
+SF_25,Archaeological,USA - unknown cliff dwelling - New Mexico,920 - 796,Y,N,N,N,0.09,16.85,To Be Submitted
+SF_28,Archaeological,USA - Ozarks - Eden's Bluff,1873 - 1629,Y,N,N,N,0.03,5.61,SAMN08191064
+SF_30,Archaeological,USA - Ozarks - Eden's Bluff,1877 - 1711,Y,N,N,N,0.01,8.27,SAMN08191068
+SF_32,Archaeological,USA - Kentucky - Cloudsplitter,1720 - 1610,Y,N,N,N,0.01,8.74,To Be Submitted
+SF_35,Archaeological,USA - Kentucky - Cloudsplitter,unknown,Y,N,N,N,0,2.45,To Be Submitted
+SF_35b,Archaeological,USA - Kentucky - Cloudsplitter,unknown,Y,N,N,N,0,11.5,To Be Submitted
+SF_41,Archaeological,USA - Ozarks - Eden's Bluff,1819 - 1639,Y,Y,N,N,0.04,14.69,SAMN08191070
+SF_42,Archaeological,USA - Ozarks - Eden's Bluff,1813 - 1622,Y,N,N,N,0.01,7.56,SAMN08191061
+SF_43,Archaeological,USA - Ozarks - Eden's Bluff,1817 - 1628,Y,Y,N,N,0.03,4.09,SAMN08191062
+SF_45,Archaeological,USA - Ozarks - Eden's Bluff,1819 - 1633,Y,Y,N,N,0.09,16.55,SAMN08191063
+SF_46,Archaeological,USA - Ozarks - Eden's Bluff,1736 - 1574,Y,N,N,N,0.03,8.28,SAMN08191059
+SF_49,Archaeological,USA - Ozarks - Eden's Bluff,915 - 795,Y,N,N,N,0.01,5.37,SAMN08191056
+SF_50,Archaeological,USA - Ozarks - Eden's Bluff,3163 - 2999,Y,N,N,N,0.01,7.2,To Be Submitted
+SF_63a,Archaeological,USA - Ozarks - Bushwack,1707 - 1570,Y,N,N,N,0.02,2.34,To Be Submitted
+SF_63b,Archaeological,USA - Ozarks - Bushwack,1707 - 1570,Y,Y,Y,N,0.08,4.47,To Be Submitted
+SF_65c,Archaeological,USA - Ozarks - Alred,1875 - 1715,N,Y,Y,N,0.15,4.22,To Be Submitted
+SF_65d,Archaeological,USA - Ozarks - Alred,1875 - 1715,N,Y,Y,N,0.19,3.96,To Be Submitted
+SF_65e,Archaeological,USA - Ozarks - Alred,1875 - 1715,N,Y,Y,N,0.21,4.34,To Be Submitted
+SF_65f,Archaeological,USA - Ozarks - Alred,1875 - 1715,Y,Y,Y,N,0.18,8.63,To Be Submitted
+SF_65g,Archaeological,USA - Ozarks - Alred,1875 - 1715,Y,Y,Y,N,0.2,9.86,To Be Submitted
+SF_65h,Archaeological,USA - Ozarks - Alred,1875 - 1715,N,Y,Y,N,0.16,2.7,To Be Submitted
+SF_65i,Archaeological,USA - Ozarks - Alred,1875 - 1715,Y,N,Y,N,0.19,8.98,To Be Submitted
+SF_65j,Archaeological,USA - Ozarks - Alred,1875 - 1715,Y,N,Y,N,0.17,13.9,To Be Submitted
+SF_65k,Archaeological,USA - Ozarks - Alred,1875 - 1715,N,Y,Y,N,0.21,3.5,To Be Submitted
+SF_65m,Archaeological,USA - Ozarks - Alred,1875 - 1715,N,Y,Y,N,0.21,1.86,To Be Submitted
+SF_66a,Archaeological,USA - Ozarks - Indian,1700 - 1568,Y,N,N,N,0.01,2.81,To Be Submitted
+SK1W_1,Wild,Canada - Saskatchewan,Modern,Y,Y,Y,Y - ENA,1.94,248.17,SAMN07513312
+SK1W_15,Wild,Canada - Saskatchewan,Modern,Y,Y,Y,Y - ENA,2.04,296.49,SAMN07513313
+SK1W_22,Wild,Canada - Saskatchewan,Modern,Y,Y,Y,Y - ENA,2.96,517.09,SAMN07513314
+SK1W_22R,Wild,Canada - Saskatchewan,Modern,Y,Y,Y,Y - ENA,4.14,863.54,SAMN07513315
+SK1W_25,Wild,Canada - Saskatchewan,Modern,Y,Y,Y,Y - ENA,1.42,200.58,SAMN07513316
+SK1W_29,Wild,Canada - Saskatchewan,Modern,Y,Y,Y,Y - ENA,2.2,409.61,SAMN07513317
+SK1W_29R,Wild,Canada - Saskatchewan,Modern,Y,Y,Y,Y - ENA,5.89,715.75,SAMN07513318
+SK1W_36,Wild,Canada - Saskatchewan,Modern,Y,Y,Y,Y - ENA,2.02,374.43,SAMN07513319
+SK1W_37,Wild,Canada - Saskatchewan,Modern,Y,Y,Y,Y - ENA,2.79,652.78,SAMN07513320
+SK1W_Q,Wild,Canada - Saskatchewan,Modern,Y,Y,Y,Y - ENA,1.94,322.55,SAMN07513321
+Zuni,TV,USA - New Mexico,Modern,Y,Y,Y,Y - TV,6.12,1939.31,SAMN07457825

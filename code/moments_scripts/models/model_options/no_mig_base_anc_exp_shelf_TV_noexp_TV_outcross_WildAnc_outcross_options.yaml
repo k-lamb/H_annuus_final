@@ -1,0 +1,107 @@
+parameters:
+- name: T0_anc
+  description: Time of ancestral contraction
+  values:
+  - demes:
+      anc:
+        epochs:
+          0: end_time
+  upper_bound: 400000
+  lower_bound: 50000
+- name: N0_anc
+  description: Ancestral effective population size pre-contraction
+  values:
+  - demes:
+      anc:
+        epochs:
+          0: start_size
+  upper_bound: 150000
+  lower_bound: 10000
+- name: T1_anc
+  description: Time of ancestral expansion post-contraction
+  values:
+  - demes:
+      anc:
+        epochs:
+          1: end_time
+  upper_bound: 11400
+  lower_bound: 3800
+- name: N1_anc
+  description: Time of ancestral expansion post-contraction
+  values:
+  - demes:
+      anc:
+        epochs:
+          1: end_size
+  upper_bound: 12450
+  lower_bound: 4150
+- name: Tfinal_anc
+  description: Time of split between TV and Wild
+  values:
+  - demes:
+      anc:
+        epochs:
+          2: end_time
+  upper_bound: 10000
+  lower_bound: 4000
+- name: Nfinal_anc
+  description: Final size of ancestral population
+  values:
+  - demes:
+      anc:
+        epochs:
+          2: end_size
+  upper_bound: 18300
+  lower_bound: 6100
+- name: Tshelf_TV
+  description: Time when steady-state ends
+  values:
+  - demes:
+      TV:
+        epochs:
+          0: end_time
+  upper_bound: 4800
+  lower_bound: 1600
+- name: N0_TV
+  description: pre-contraction (a.k.a. starting) size
+  values:
+  - demes:
+      TV:
+        epochs:
+          0: start_size
+  upper_bound: 18300
+  lower_bound: 6100
+- name: Nshelf_TV
+  description: pre-contraction size (end of steady-state)
+  values:
+  - demes:
+      TV:
+        epochs:
+          0: end_size
+  upper_bound: 18300
+  lower_bound: 6100
+- name: Ncon_TV
+  description: contraction size
+  values:
+  - demes:
+      TV:
+        epochs:
+          1: end_size
+  upper_bound: 2700
+  lower_bound: 900
+- name: N_Wild
+  description: constant Wild population size
+  values:
+  - demes:
+      Wild:
+        epochs:
+          0: start_size
+  upper_bound: 50000
+  lower_bound: 8000
+constraints:
+- params: [T0_anc, T1_anc]
+  constraint: greater_than
+- params: [T1_anc, Tfinal_anc]
+  constraint: greater_than
+- params: [Tfinal_anc, Tshelf_TV]
+  constraint: greater_than

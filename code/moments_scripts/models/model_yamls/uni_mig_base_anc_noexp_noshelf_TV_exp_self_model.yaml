@@ -1,0 +1,30 @@
+description: uni_mig + base + anc_noexp + noshelf + TV_exp
+time_units: years
+generation_time: 1
+demes:
+  - name: anc
+    description: Equilibrium/root population
+    epochs:
+    - end_time: 2.2e5
+      start_size: 1e5
+    - end_time: 5.3e3
+      end_size: 1.2e4
+  - name: TV
+    description: T . annuus traditional varieties 
+    ancestors: [anc]
+    epochs:
+    - end_time: 1.3e3
+      start_size: 1.2e4
+      end_size: 1.8e3
+      selfing_rate: 0.5
+    - end_time: 0
+      end_size: 6e4
+      selfing_rate: 0.5
+  - name: Wild
+    description: Wild H. annuus
+    ancestors: [anc]
+    epochs:
+    - start_size: 1.6e4
+      end_time: 0
+migrations:
+  - {source: Wild, dest: TV, rate: 1e-4, start_time: 1.3e3, end_time: 0}

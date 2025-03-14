@@ -1,0 +1,32 @@
+description: uni_mig + hyper + anc_noexp + noshelf + TV_noexp + TV self + WildAnc outcross
+time_units: years
+generation_time: 1
+demes:
+  - name: anc
+    description: Equilibrium/root population
+    epochs:
+    - end_time: 2.2e5
+      start_size: 1e5
+    - end_time: 5.3e3
+      end_size: 1.2e4
+  - name: TV
+    description: T . annuus traditional varieties 
+    ancestors: [anc]
+    epochs:
+    - end_time: 0
+      start_size: 1.2e4
+      end_size: 1.8e3
+      selfing_rate: 0.5
+  - name: Wild
+    description: Wild H. annuus
+    ancestors: [anc]
+    epochs:
+    - end_time: 3.2e3
+      start_size: 1.2e4
+      end_size: 2.6e4
+    - end_time: 4.9e2
+      end_size: 1e4
+    - end_time: 0
+      end_size: 1.5e4
+migrations:
+  - {source: Wild, dest: TV, rate: 1e-4, start_time: 1.3e3, end_time: 0}

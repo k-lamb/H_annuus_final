@@ -1,0 +1,160 @@
+parameters:
+- name: T0_anc
+  description: Time of ancestral contraction
+  values:
+  - demes:
+      anc:
+        epochs:
+          0: end_time
+  upper_bound: 400000
+  lower_bound: 50000
+- name: N0_anc
+  description: Ancestral effective population size pre-contraction
+  values:
+  - demes:
+      anc:
+        epochs:
+          0: start_size
+  upper_bound: 150000
+  lower_bound: 10000
+- name: Tex_anc
+  description: Time of ancestral expansion
+  values:
+  - demes:
+      anc:
+        epochs:
+          1: end_time
+- name: Nex_anc
+  description: Ancestral effective population size post-contraction
+  values:
+  - demes:
+      anc:
+        epochs:
+          1: end_size
+- name: T_anc
+  description: Time of split between TV and Wild
+  values:
+  - demes:
+      anc:
+        epochs:
+          2: end_time
+- name: N_anc
+  description: Ancestral effective population size post-expansion
+  values:
+  - demes:
+      anc:
+        epochs:
+          2: end_size
+- name: T_TV
+  description: time when steady state ends and contraction begins
+  values:
+  - demes:
+      TV:
+        epochs:
+          0: end_time
+- name: N0_TV
+  description: steady state size
+  values:
+  - demes:
+      TV:
+        epochs:
+          0: start_size
+- name: N01_TV
+  description: steady state size
+  values:
+  - demes:
+      TV:
+        epochs:
+          0: start_size
+- name: Tcon0_TV
+  description: time when contraction ends and expansion begins
+  values:
+  - demes:
+      TV:
+        epochs:
+          1: end_time
+- name: Ncon0_TV
+  description: contracted size
+  values:
+  - demes:
+      TV:
+        epochs:
+          1: end_size
+- name: Texpansion_TV
+  description: time when expansion ends and con1 begins
+  values:
+  - demes:
+      TV:
+        epochs:
+          2: end_time
+- name: Nexpansion_TV
+  description: expansion size
+  values:
+  - demes:
+      TV:
+        epochs:
+          2: end_size
+- name: Ncon1_TV
+  description: expansion size
+  values:
+  - demes:
+      TV:
+        epochs:
+          3: end_size
+- name: Tex0_Wild
+  description: time when expansion ceases and contraction begins
+  values:
+  - demes:
+      Wild:
+        epochs:
+          0: end_time
+- name: N0_Wild
+  description: pre-expansion size
+  values:
+  - demes:
+      Wild:
+        epochs:
+          0: start_size
+- name: Nex0_Wild
+  description: expanded size
+  values:
+  - demes:
+      Wild:
+        epochs:
+          0: end_size
+- name: Tcon_Wild
+  description: time contraction ends and expansion begins again
+  values:
+  - demes:
+      Wild:
+        epochs:
+          1: end_time
+- name: Ncon_Wild
+  description: contracted size
+  values:
+  - demes:
+      Wild:
+        epochs:
+          1: end_size
+- name: Nex1_Wild
+  description: contracted size
+  values:
+  - demes:
+      Wild:
+        epochs:
+          2: end_size
+constraints:
+- params: [T0_anc, Tex_anc]
+  constraint: greater_than
+- params: [Tex_anc, T_anc]
+  constraint: greater_than
+- params: [T_anc, T_TV]
+  constraint: greater_than
+- params: [T_TV, Tcon0_TV]
+  constraint: greater_than
+- params: [Tcon0_TV, Texpansion_TV]
+  constraint: greater_than
+- params: [T_anc, Tex0_Wild]
+  constraint: greater_than
+- params: [Tex0_Wild, Tcon_Wild]
+  constraint: greater_than

@@ -1,0 +1,67 @@
+parameters:
+- name: T0_anc
+  description: Time of ancestral contraction
+  values:
+  - demes:
+      anc:
+        epochs:
+          0: end_time
+  upper_bound: 600000
+  lower_bound: 50000
+- name: N0_anc
+  description: Ancestral effective population size pre-contraction
+  values:
+  - demes:
+      anc:
+        epochs:
+          0: start_size
+  upper_bound: 150000
+  lower_bound: 10000
+- name: Tfinal_anc
+  description: Time of split between TV and Wild
+  values:
+  - demes:
+      anc:
+        epochs:
+          1: end_time
+  upper_bound: 8000
+  lower_bound: 4000
+- name: Nfinal_anc
+  description: Final size of ancestral population
+  values:
+  - demes:
+      anc:
+        epochs:
+          1: end_size
+  upper_bound: 25000
+  lower_bound: 6100
+- name: N0_TV
+  description: pre-contraction (a.k.a. starting) size
+  values:
+  - demes:
+      TV:
+        epochs:
+          0: start_size
+  upper_bound: 18300
+  lower_bound: 1000
+- name: Ncon_TV
+  description: contraction size
+  values:
+  - demes:
+      TV:
+        epochs:
+          0: end_size
+  upper_bound: 5000
+  lower_bound: 200
+- name: N_Wild
+  description: constant Wild population size
+  values:
+  - demes:
+      Wild:
+        epochs:
+          0: start_size
+  upper_bound: 50000
+  lower_bound: 8000
+constraints:
+- params: [T0_anc, Tfinal_anc]
+  constraint: greater_than

@@ -1,0 +1,6 @@
+pair	pop1	pop2	proj1	proj2	vcf
+TV.Wild	TV	Wild	20	134	test_vcf_filter
+TV.Wild	TV	Wild	20	134	test_vcf_filter
+TV.Wild	TV	Wild	20	134	test_vcf_filter
+TV.Wild	TV	Wild	20	134	test_vcf_filter
+TV.Wild	TV	Wild	20	134	test_vcf_filter

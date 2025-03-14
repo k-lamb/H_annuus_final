@@ -1,0 +1,82 @@
+parameters:
+- name: T0_anc
+  description: Time of ancestral contraction
+  values:
+  - demes:
+      anc:
+        epochs:
+          0: end_time
+  upper_bound: 100000000
+  lower_bound: 10
+- name: N0_anc
+  description: Ancestral effective population size pre-contraction
+  values:
+  - demes:
+      anc:
+        epochs:
+          0: start_size
+  upper_bound: 100000000
+  lower_bound: 10
+- name: self_anc0_rate
+  description: selfing rate for Anc
+  values:
+  - demes:
+      anc:
+        epochs:
+          0: selfing_rate
+  upper_bound: 1
+  lower_bound: 0.01
+- name: T1_anc
+  description: Time of ancestral expansion post-contraction
+  values:
+  - demes:
+      anc:
+        epochs:
+          1: end_time
+  upper_bound: 100000000
+  lower_bound: 10
+- name: N1_anc
+  description: Time of ancestral expansion post-contraction
+  values:
+  - demes:
+      anc:
+        epochs:
+          1: end_size
+  upper_bound: 100000000
+  lower_bound: 10
+- name: self_anc1_rate
+  description: selfing rate for Anc
+  values:
+  - demes:
+      anc:
+        epochs:
+          1: selfing_rate
+  upper_bound: 1
+  lower_bound: 0.01
+- name: Tfinal_anc
+  description: Time of split between TV and Wild
+  values:
+  - demes:
+      anc:
+        epochs:
+          2: end_time
+  upper_bound: 100000000
+  lower_bound: 10
+- name: Nfinal_anc
+  description: Final size of ancestral population
+  values:
+  - demes:
+      anc:
+        epochs:
+          2: end_size
+  upper_bound: 100000000
+  lower_bound: 10
+- name: self_anc2_rate
+  description: selfing rate for Anc
+  values:
+  - demes:
+      anc:
+        epochs:
+          2: selfing_rate
+  upper_bound: 1
+  lower_bound: 0.01

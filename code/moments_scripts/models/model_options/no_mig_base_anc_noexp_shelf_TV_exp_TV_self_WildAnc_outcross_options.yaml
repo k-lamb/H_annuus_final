@@ -1,0 +1,134 @@
+parameters:
+- name: T0_anc
+  description: Time of ancestral contraction
+  values:
+  - demes:
+      anc:
+        epochs:
+          0: end_time
+  upper_bound: 600000
+  lower_bound: 50000
+- name: N0_anc
+  description: Ancestral effective population size pre-contraction
+  values:
+  - demes:
+      anc:
+        epochs:
+          0: start_size
+  upper_bound: 150000
+  lower_bound: 10000
+- name: Tfinal_anc
+  description: Time of split between TV and Wild
+  values:
+  - demes:
+      anc:
+        epochs:
+          1: end_time
+  upper_bound: 5500
+  lower_bound: 5100
+- name: Nfinal_anc
+  description: Final size of ancestral population
+  values:
+  - demes:
+      anc:
+        epochs:
+          1: end_size
+  upper_bound: 250000
+  lower_bound: 6100
+- name: Tshelf_TV
+  description: Time when steady-state ends
+  values:
+  - demes:
+      TV:
+        epochs:
+          0: end_time
+  upper_bound: 4800
+  lower_bound: 1600
+- name: N0_TV
+  description: pre-contraction (a.k.a. starting) size
+  values:
+  - demes:
+      TV:
+        epochs:
+          0: start_size
+  upper_bound: 30000
+  lower_bound: 1000
+- name: Nshelf_TV
+  description: pre-contraction size (end of steady-state)
+  values:
+  - demes:
+      TV:
+        epochs:
+          0: end_size
+  upper_bound: 30000
+  lower_bound: 1000
+- name: self_TV0_rate
+  description: selfing rate for TV
+  values:
+  - demes:
+      TV:
+        epochs:
+          0: selfing_rate
+  upper_bound: 1
+  lower_bound: 0.01
+- name: Texp_TV
+  description: time when expansion ends and con1 begins
+  values:
+  - demes:
+      TV:
+        epochs:
+          1: end_time
+  upper_bound: 3000
+  lower_bound: 1
+- name: Ncon_TV
+  description: contraction size
+  values:
+  - demes:
+      TV:
+        epochs:
+          1: end_size
+  upper_bound: 10000
+  lower_bound: 100
+- name: self_TV1_rate
+  description: selfing rate for TV
+  values:
+  - demes:
+      TV:
+        epochs:
+          1: selfing_rate
+  upper_bound: 1
+  lower_bound: 0.01
+- name: Nexp_TV
+  description: expansion size
+  values:
+  - demes:
+      TV:
+        epochs:
+          2: end_size
+  upper_bound: 89400
+  lower_bound: 29800
+- name: self_TV2_rate
+  description: selfing rate for TV
+  values:
+  - demes:
+      TV:
+        epochs:
+          2: selfing_rate
+  upper_bound: 1
+  lower_bound: 0.01
+- name: N_Wild
+  description: constant Wild population size
+  values:
+  - demes:
+      Wild:
+        epochs:
+          0: start_size
+  upper_bound: 50000
+  lower_bound: 8000
+constraints:
+- params: [T0_anc, Tfinal_anc]
+  constraint: greater_than
+- params: [Tfinal_anc, Tshelf_TV]
+  constraint: greater_than
+- params: [Tshelf_TV, Texp_TV]
+  constraint: greater_than

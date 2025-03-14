@@ -1,0 +1,29 @@
+description: Sunflower Test Model
+time_units: years
+generation_time: 1
+demes:
+  - name: anc
+    description: Equilibrium/root population
+    epochs:
+    - end_time: {T0_anc}
+      start_size: {N0_anc}
+    - end_time: {T_anc}
+      end_size: {N_anc}
+  - name: TV
+    description: T . annuus traditional varieties 
+    ancestors: [anc]
+    epochs:
+    - end_time: {T_TV}
+      start_size: {N0_TV}
+      end_size: {N_TV}
+    - end_time: 0
+      end_size: {Ncontract_TV}
+  - name: Wild
+    description: Wild H. annuus
+    ancestors: [anc]
+    epochs:
+    - start_size: {N_Wild}
+      end_time: 0
+migrations:
+  - {source: Wild, dest: TV, rate: {Mig_Wild2TV}, start_time: {Tmig_Wild2TV}, end_time: 0}
+  - {source: TV, dest: Wild, rate: {Mig_TV2Wild}, start_time: {Tmig_TV2Wild}, end_time: 0}
