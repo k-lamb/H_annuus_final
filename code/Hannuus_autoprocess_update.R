@@ -11,15 +11,16 @@ library(scales)
 library(reticulate) # to run python in-line (needed for defining bounds)
 
 setwd("~/Documents/Work MacBook/Research/paper_code/H_annuus_demography/data/moments_outputs/")
-
+root_wd <- "~/Documents/Work MacBook/Research/paper_code/H_annuus_demography/"
 # collating data
 # wd <- "1000max_everything_wildquarter_selfingall_nohyper/1000max_everything_wildquarter_selfingall_nohyper_subset" # appending directory with files... need this so we can save plots at cd ..
 # wd <- "1000max_everything_wildfull_optparams_TfinancFIXED/500max_everything_wildfull_hyper_fixed_recheck"
-wd <- "1000max_everything_wildfull_mininumbounds_Tfinanc/exp_fix_real/"
+# wd <- "1000max_everything_wildfull_mininumbounds_Tfinanc/exp_fix_real/"
+wd <- "1000max_everything_wildfull_mininumbounds_Tfinanc/exp_fix_real_TVbottle_TVexpcon"
 # wd <- "1000max_everything_wildful_boundsoptim_NwildfinalFIX_self_selfoutcross"
 # wd <- "1000max_fullrun_wildfull_boundsoptim_self_selfoutcross/"
 # wd <- "1000max_everything_wildfull_optparams_TfinancFIXED/1000max_subset_wildfull_hyper_optparams_wildTconT0NconADJ/updated"
-self_filter = T # retain only self-self models
+self_filter = F # retain only self-self models
 bucket_size <- 2 # AIC bucket size
 bucket_multiplier <- 150 # multiplies bucket size for better plotting of AIC bins (bin size = bucket_size*bucket_multiplier)
 
@@ -43,6 +44,7 @@ dat$model_full <- paste0(dat$model, "_", dat$complexity, "_", dat$ancient_exp,
 
 dat$model.score <- ((max(dat$AIC) - min(dat$AIC))-(dat$AIC - min(dat$AIC)))/(max(dat$AIC) - min(dat$AIC))
 dat <- dat %>% filter(is.na(AIC) == F) # remove weird exceptions where model iteration row is
+dat$Ncon2_TV2 <- coalesce(dat$Ncon2_TV, dat$Ncon_TV2) # accidental issue not worth fixing where TV_Bottle noshelf use Ncon_TV2 and shelf use Ncon2_TV
 
 # # weird issue where bounds suddenly not respected? might have caused an issue with running too many things at once... fixing here
 # if (str_detect(wd, "divergefixed") == T) {
@@ -88,12 +90,12 @@ View(dat_aic)
 
 
 # fixing labels
-{exp_labels <- c(TV_noexp = "No TV expansion", TV_exp = "TV expansion")
-model_labels <- c(bi_mig = "Bi-directional migration", uni_mig = "Uni-directional migration", no_mig = "No migration")
+{exp_labels <- c(TV_noexp = "No TV Expansion", TV_exp = "TV Expansion", TV_bottle = "TV Bottleneck", TV_exp_con = "TV Expansion and Contraction")
+model_labels <- c(bi_mig = "Bi-directional Migration", uni_mig = "Uni-Directional Migration", no_mig = "No Migration")
 dat$shelf.fac <- factor(dat$shelf, levels=c("shelf", "noshelf"), labels=c("Shelf", "No Shelf"))
 dat$model.fac <- factor(dat$model, levels=c("bi_mig", "uni_mig", "no_mig"))
 dat$simple.complex <- factor(dat$complexity, levels=c("base", "hyper"), labels=c("Simple", "Complex"))
-dat$ancient.expansion <- factor(dat$ancient_exp, levels=c("anc_exp", "anc_noexp"), labels=c("Expansion", "No expansion"))
+dat$ancient.expansion <- factor(dat$ancient_exp, levels=c("anc_exp", "anc_noexp"), labels=c("Expansion", "No Expansion"))
 dat$self.fac <- factor(dat$selfing, levels=c("self", "outcross"), labels=c("Selfing", "Outcrossing"))
 dat$self_all.fac <- factor(dat$selfing_all, levels=c("self", "outcross"), labels=c("Selfing", "Outcrossing"))
 dat$mig_epoch.fac <- factor(dat$mig_epoch, levels=c("1", "2"), labels=c("1", "2"))}
@@ -109,17 +111,19 @@ if (!dir.exists(dir_path)) {
 }
 
 # plot AIC to evaluate best models
+wrap_fun <- label_wrap_gen(width = 10)
+
 jpeg(sprintf("%s/parameters/AIC_models_self.jpeg", wd), res=1e3, units="in", width=20, height=10)
 ggplot(data=dat %>% arrange(AIC), aes(x=AIC))+
-  facet_grid(TV_exp ~ model.fac * simple.complex * self_all.fac, labeller=labeller(TV_exp=exp_labels, model.fac=model_labels))+
+  facet_grid(TV_exp ~ model.fac, labeller=labeller(TV_exp=exp_labels, model.fac=model_labels, class = wrap_fun))+
   geom_density(aes(color=shelf.fac, linetype=ancient.expansion), alpha=0.5, fill=NA)+ # no simple vs complex model
   scale_color_manual(values=c("black", "gray50"))+
   xlab("AIC")+
   ylab("Density")+
-  # xlim(c(NA, 4e4))+
+  xlim(c(NA, 5e4))+
   # scale_x_continuous(labels = scales::scientific)+
   theme_bw()+
-  theme(axis.text.x = element_text(angle = 45, vjust = 0.5, hjust=0.5),
+  theme(axis.text.x = element_text(angle = 45, vjust = 0.5, hjust=0.5), strip.text.y = element_text(size=6),
         panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         plot.background = element_rect(fill="white"), axis.line = element_line(colour = "black"),
         legend.position = "right")+
@@ -155,14 +159,16 @@ dat3 <- dat2 %>%
   
   dat3 <- dat3 %>% 
     mutate(model_realname = case_when(
-      model.fac == "bi_mig" ~ "Bi-directional migration",
-      model.fac == "uni_mig" ~ "Uni-directional migration",
-      model.fac == "no_mig" ~ "No migration")) %>% 
+      model.fac == "bi_mig" ~ "Bi-Directional Migration",
+      model.fac == "uni_mig" ~ "Uni-Directional Migration",
+      model.fac == "no_mig" ~ "No Migration")) %>% 
     mutate(TVexp.fac = case_when(
       TV_exp == "TV_exp" ~ "Expansion",
-      TV_exp == "TV_noexp" ~ "No expansion"))
+      TV_exp == "TV_noexp" ~ "Contraction",
+      TV_exp == "TV_bottle" ~ "Bottleneck",
+      TV_exp == "TV_exp_con" ~ "Expansion and Contraction"))
   
-  dat3$model_realname <- factor(dat3$model_realname, levels=c("Bi-directional migration", "Uni-directional migration", "No migration"))
+  dat3$model_realname <- factor(dat3$model_realname, levels=c("Bi-Directional Migration", "Uni-Directional Migration", "No Migration"))
   
   model1_AIC <-
     ggplot(dat=dat3 %>% filter(model == "bi_mig"), aes(x=AIC.bucket, y=mod.bucket.count))+
@@ -192,7 +198,7 @@ dat3 <- dat2 %>%
     labs(fill = "Model")
   
   shelf_AIC <-
-    ggplot(dat=dat3 %>% filter(model_realname == "Bi-directional migration"), aes(x=AIC.bucket, y=mod.bucket.count))+
+    ggplot(dat=dat3 %>% filter(model_realname == "Bi-Directional Migration"), aes(x=AIC.bucket, y=mod.bucket.count))+
     geom_bar(position="fill", stat="identity", aes(fill=shelf.fac))+
     # facet_wrap(~simple.complex)+
     theme_bw()+
@@ -206,9 +212,9 @@ dat3 <- dat2 %>%
     labs(fill = "Ancient TV Shelf")
   
   TV_exp_AIC <-
-    ggplot(dat=dat3 %>% filter(model_realname == "Bi-directional migration"), aes(x=AIC.bucket, y=mod.bucket.count))+
+    ggplot(dat=dat3 %>% filter(model_realname == "Bi-Directional Migration"), aes(x=AIC.bucket, y=mod.bucket.count))+
     geom_bar(position="fill", stat="identity", aes(fill=TVexp.fac))+
-    facet_wrap(~simple.complex)+
+    # facet_wrap(~simple.complex)+
     theme_bw()+
     xlim(c(NA, xlimit))+
     ylab("Proportion")+
@@ -220,9 +226,9 @@ dat3 <- dat2 %>%
     labs(fill = "TV Expansion")
   
   Anc_exp_AIC <-
-    ggplot(dat=dat3 %>% filter(model_realname == "Bi-directional migration"), aes(x=AIC.bucket, y=mod.bucket.count))+
+    ggplot(dat=dat3 %>% filter(model_realname == "Bi-Directional Migration"), aes(x=AIC.bucket, y=mod.bucket.count))+
     geom_bar(position="fill", stat="identity", aes(fill=ancient_exp))+
-    facet_wrap(~simple.complex)+
+    # facet_wrap(~simple.complex)+
     theme_bw()+
     ylab("Proportion")+
     xlab("AIC")+
@@ -234,9 +240,9 @@ dat3 <- dat2 %>%
     labs(fill = "Ancient Expansion")
   
   selfing_AIC <-
-    ggplot(dat=dat3 %>% filter(model_realname == "Bi-directional migration"), aes(x=AIC.bucket, y=mod.bucket.count))+
+    ggplot(dat=dat3 %>% filter(model_realname == "Bi-Directional Migration"), aes(x=AIC.bucket, y=mod.bucket.count))+
     geom_bar(position="fill", stat="identity", aes(fill=selfing))+
-    facet_wrap(~simple.complex)+
+    # facet_wrap(~simple.complex)+
     theme_bw()+
     ylab("Proportion")+
     xlab("AIC")+
@@ -248,9 +254,9 @@ dat3 <- dat2 %>%
     labs(fill = "Selfing")
   
   selfing_all_AIC <-
-    ggplot(dat=dat3 %>% filter(model_realname == "Bi-directional migration"), aes(x=AIC.bucket, y=mod.bucket.count))+
+    ggplot(dat=dat3 %>% filter(model_realname == "Bi-Directional Migration"), aes(x=AIC.bucket, y=mod.bucket.count))+
     geom_bar(position="fill", stat="identity", aes(fill=self_all.fac))+
-    facet_wrap(~simple.complex)+
+    # facet_wrap(~simple.complex)+
     theme_bw()+
     ylab("Proportion")+
     xlab("AIC")+
@@ -262,9 +268,9 @@ dat3 <- dat2 %>%
     labs(fill = "Selfing (Wild & Anc)")
   
   mig_epoch_AIC <-
-    ggplot(dat=dat3 %>% filter(model_realname == "Bi-directional migration"), aes(x=AIC.bucket, y=mod.bucket.count))+
+    ggplot(dat=dat3 %>% filter(model_realname == "Bi-Directional Migration"), aes(x=AIC.bucket, y=mod.bucket.count))+
     geom_bar(position="fill", stat="identity", aes(fill=as.factor(mig_epoch)))+
-    facet_wrap(~simple.complex)+
+    # facet_wrap(~simple.complex)+
     theme_bw()+
     ylab("Proportion")+
     xlab("AIC")+
@@ -297,11 +303,13 @@ dat3 <- dat2 %>%
                           common.legend = T)
   }
   
-  jpeg(sprintf("%s/parameters/AIC_buckets.jpeg", wd), res=1e3, units="in", width=30, height=10)
+  # 2x2 plotting... easier on the eyes
+  pl.final <- ggarrange(model2_AIC, TV_exp_AIC, Anc_exp_AIC, shelf_AIC, ncol=2, nrow=2, align="hv")
+  
+  jpeg(sprintf("%s/parameters/AIC_buckets.jpeg", wd), res=1e3, units="in", width=10, height=10)
   print(pl.final)
   dev.off()
 }
-
 
 
 dat_base <- dat3 %>% filter(complexity=="base")
@@ -468,147 +476,272 @@ for (i in 1:length(unique(dat$model_full))){
 
 # plot it like Peter's graphs
 n=10 # number of points in spline fitting
+models <- c("best", "converged") # data prep. runs as a block.
+models <- c("converged") # data prep. runs as a block.
+mod.dat.full <- data.frame(pop=character(), time=numeric(), size=numeric(), model=character())
 
-# For best model:
-model <- dat %>% 
-  filter(model_full == (dat_aic %>% arrange(AIC.min) %>% slice_head(n=1))$model_full) %>% 
-  filter(AIC == min(AIC))
-mod_n <- model$model_full
+for (model.type in models) {
 
-# For most converged model:
-model <- dat %>% 
-  filter(model_full == (dat_aic %>% arrange(AIC.mode) %>% slice_head(n=1))$model_full & AIC <= min(dat_aic$AIC.mode)+2 & AIC >= min(dat_aic$AIC.mode)-2) %>% 
-  slice_head(n=1)
-mod_n <- model$model_full
-
-# data prep. runs as a block.
-{
-  # Ancestral
-  {
-    if (str_detect(mod_n, "anc_exp") == T) {
-      anc.dat <- data.frame(pop = rep("Anc", 3), time=c(model$T0_anc, model$T1_anc, model$Tfinal_anc), 
-                            size=c(model$N0_anc, model$N1_anc, model$Nfinal_anc))
-    }
-    else {
-      anc.dat <- data.frame(pop = rep("Anc", 2), time=c(model$T0_anc, model$Tfinal_anc), size=c(model$N0_anc, model$Nfinal_anc))
-    }
+  if (model.type == "best") {
+    # For best model:
+    model <- dat %>% 
+      filter(model_full == (dat_aic %>% arrange(AIC.min) %>% slice_head(n=1))$model_full) %>% 
+      filter(AIC == min(AIC))
   }
   
-  # TV
+  if (model.type == "converged") {
+    # For most converged model:
+    model <- dat %>% 
+      filter(model_full == (dat_aic %>% arrange(AIC.mode) %>% slice_head(n=1))$model_full) %>% 
+      filter(AIC <=  (dat_aic %>% arrange(AIC.mode) %>% slice_head(n=1))$AIC.mode+2) %>% 
+      arrange(AIC) %>% 
+      slice_head(n=1)
+  }
+  
+  mod_n <- model$model_full
+  
   {
-    if (str_detect(mod_n, "noshelf") == T & str_detect(mod_n, "TV_noexp") == T) {
-      tv.dat <- data.frame(pop = rep("TV", 2), time=c(model$Tfinal_anc, 0), size=c(model$N0_TV, model$Ncon_TV))
+    # Ancestral
+    {
+      if (str_detect(mod_n, "anc_exp") == T) {
+        anc.dat <- data.frame(pop = rep("Ancestral", 3), time=c(model$T0_anc, model$T1_anc, model$Tfinal_anc), 
+                              size=c(model$N0_anc, model$N1_anc, model$Nfinal_anc))
+      }
+      else {
+        anc.dat <- data.frame(pop = rep("Ancestral", 2), time=c(model$T0_anc, model$Tfinal_anc), size=c(model$N0_anc, model$Nfinal_anc))
+      }
     }
     
-    if (str_detect(mod_n, "_shelf") == T & str_detect(mod_n, "TV_noexp") == T) {
-      tv.dat <- data.frame(pop = rep("TV", 3), time=c(model$Tfinal_anc, model$Tshelf_TV, 0), 
-                           size=c(model$N0_TV, model$Nshelf_TV, model$Ncon_TV))
-    }
-    if (str_detect(mod_n, "noshelf") == T & str_detect(mod_n, "TV_exp") == T) {
-      tv.dat <- data.frame(pop = rep("TV", 3), time=c(model$Tfinal_anc, model$Tcon_exp_TV, 0), 
-                           size=c(model$N0_TV, model$Ncon_TV, model$Nexp_TV))
+    # TV
+    {
+      if (str_detect(mod_n, "noshelf") == T & str_detect(mod_n, "TV_noexp") == T) {
+        tv.dat <- data.frame(pop = rep("Traditional Varieties", 2), time=c(model$Tfinal_anc, 0), size=c(model$N0_TV, model$Ncon_TV))
+      }
+      
+      if (str_detect(mod_n, "_shelf") == T & str_detect(mod_n, "TV_noexp") == T) {
+        tv.dat <- data.frame(pop = rep("Traditional Varieties", 3), time=c(model$Tfinal_anc, model$Tshelf_TV, 0), 
+                             size=c(model$N0_TV, model$Nshelf_TV, model$Ncon_TV))
+      }
+      if (str_detect(mod_n, "noshelf") == T & str_detect(mod_n, "TV_exp") == T & str_detect(mod_n, "TV_exp_con") == F) {
+        tv.dat <- data.frame(pop = rep("Traditional Varieties", 3), time=c(model$Tfinal_anc, model$Tcon_exp_TV, 0), 
+                             size=c(model$N0_TV, model$Ncon_TV, model$Nexp_TV))
+      }
+      
+      if (str_detect(mod_n, "shelf") == T & str_detect(mod_n, "TV_exp") == T & str_detect(mod_n, "TV_exp_con")  == F) {
+        tv.dat <- data.frame(pop = rep("Traditional Varieties", 4), time=c(model$Tfinal_anc, model$Tshelf_TV, model$Texp_TV, 0), 
+                             size=c(model$N0_TV, model$Nshelf_TV, model$Ncon_TV, model$Nexp_TV))
+      }
+      
+      if (str_detect(mod_n, "noshelf") == T & str_detect(mod_n, "TV_exp_con") == T) {
+        tv.dat <- data.frame(pop = rep("Traditional Varieties", 4), time=c(model$Tfinal_anc, model$Tcon_exp_TV, model$model$Tmodcon_TV, 0), 
+                             size=c(model$N0_TV, model$Ncon_TV, model$Nexp_TV, model$Nmodcon_TV))
+      }
+      
+      if (str_detect(mod_n, "shelf") == T & str_detect(mod_n, "TV_exp_con") == T) {
+        tv.dat <- data.frame(pop = rep("Traditional Varieties", 5), time=c(model$Tfinal_anc, model$Tshelf_TV, model$Texp_TV, model$Tmodcon_TV, 0), 
+                             size=c(model$N0_TV, model$Nshelf_TV, model$Ncon_TV, model$Nexp_TV, model$Nmodcon_TV))
+      }
+      
+      if (str_detect(mod_n, "noshelf") == T & str_detect(mod_n, "TV_bottle") == T) {
+        tv.dat <- data.frame(pop = rep("Traditional Varieties", 3), time=c(model$Tfinal_anc, model$Texp_TV, 0), 
+                             size=c(model$N0_TV, model$Ncon_TV, model$Ncon2_TV2))
+      }
+      
+      if (str_detect(mod_n, "shelf") == T & str_detect(mod_n, "TV_bottle") == T) {
+        tv.dat <- data.frame(pop = rep("Traditional Varieties", 4), time=c(model$Tfinal_anc, model$Tshelf_TV, model$Texp_TV, 0), 
+                             size=c(model$N0_TV, model$Nshelf_TV, model$Ncon_TV, model$Ncon2_TV2))
+      }
     }
     
-    if (str_detect(mod_n, "shelf") == T & str_detect(mod_n, "TV_exp") == T) {
-      tv.dat <- data.frame(pop = rep("TV", 4), time=c(model$Tfinal_anc, model$Tshelf_TV, model$Texp_TV, 0), 
-                           size=c(model$N0_TV, model$Nshelf_TV, model$Ncon_TV, model$Nexp_TV))
+    # Wild 
+    {
+      if (str_detect(mod_n, "hyper") == T) {
+        wild.dat <- data.frame(pop = rep("Wild", 4), time=c(model$Tfinal_anc, model$T0_Wild, model$Tcon_Wild, 0), 
+                               size=c(model$N0_Wild, model$N0exp_Wild, model$Ncon_Wild, model$Nfinal_Wild))
+      }
     }
-  }
-  
-  # Wild 
-  {
-    if (str_detect(mod_n, "hyper") == T) {
-      wild.dat <- data.frame(pop = rep("Wild", 4), time=c(model$Tfinal_anc, model$T0_Wild, model$Tcon_Wild, 0), 
-                             size=c(model$N0_Wild, model$N0exp_Wild, model$Ncon_Wild, model$Nfinal_Wild))
+    
+    mod.dat <- rbind(anc.dat, tv.dat, wild.dat)
+    Tmig <- model$Tmig_WildTV
+    mod.dat <- mod.dat %>% mutate(
+      Tmig_WildTV = rep(Tmig, nrow(mod.dat)),
+      model=if_else(model.type=="best", "Minimum AIC", "Converged AIC"))
+    
+    mod.dat.full <- rbind(mod.dat.full, mod.dat)
+    
+    # trying alternative to spline fitting the points (make the connections straighter)
+    # ancestral
+    grid <- data.frame(time = numeric(), size = numeric())
+    for (i in 1:(nrow(anc.dat) - 1)) {
+      temp <- data.frame(time=seq(anc.dat$time[i], anc.dat$time[(i+1)], length.out=n),
+                         size=seq(anc.dat$size[i], anc.dat$size[(i+1)], length.out=n))
+      grid <- rbind(grid, temp)
     }
+    anc.dat.straight <- data.frame(pop=rep("Anc", dim(grid)[1]), time=grid$time, size=grid$size)
+    
+    # TV
+    grid <- data.frame(time = numeric(), size = numeric())
+    for (i in 1:(nrow(tv.dat) - 1)) {
+      temp <- data.frame(time=seq(tv.dat$time[i], tv.dat$time[(i+1)], length.out=n),
+                         size=seq(tv.dat$size[i], tv.dat$size[(i+1)], length.out=n))
+      grid <- rbind(grid, temp)
+    }
+    TV.dat.straight <- data.frame(pop=rep("TV", dim(grid)[1]), time=grid$time, size=grid$size)
+    
+    # Wild
+    grid <- data.frame(time = numeric(), size = numeric())
+    for (i in 1:(nrow(wild.dat) - 1)) {
+      temp <- data.frame(time=seq(wild.dat$time[i], wild.dat$time[(i+1)], length.out=n),
+                         size=seq(wild.dat$size[i], wild.dat$size[(i+1)], length.out=n))
+      grid <- rbind(grid, temp)
+    }
+    Wild.dat.straight <- data.frame(pop=rep("Wild", dim(grid)[1]), time=grid$time, size=grid$size)
+    
+    
+    # Geom_smooth fitting is rough... adding spline fit points for smoother plotting
+    # ancestral
+    spline_points <- data.frame(time = numeric(), size = numeric())
+    for (i in 1:(nrow(anc.dat) - 1)) {
+      spline_result <- as.data.frame(spline(anc.dat$time[i:(i+1)], anc.dat$size[i:(i+1)], n = n)) # 50 intermediate points
+      spline_points <- rbind(spline_points, spline_result %>% map_df(rev))
+    }
+    anc.dat.spline <- data.frame(pop=rep("Anc", dim(spline_points)[1]), time=spline_points$x, size=spline_points$y)
+    
+    # TV
+    spline_points <- data.frame(time = numeric(), size = numeric())
+    for (i in 1:(nrow(tv.dat) - 1)) {
+      spline_result <- as.data.frame(spline(tv.dat$time[i:(i+1)], tv.dat$size[i:(i+1)], n = n)) # 50 intermediate points
+      spline_points <- rbind(spline_points, spline_result %>% map_df(rev))
+    }
+    tv.dat.spline <- data.frame(pop=rep("TV", dim(spline_points)[1]), time=spline_points$x, size=spline_points$y)
+    
+    # Wild
+    spline_points <- data.frame(time = numeric(), size = numeric())
+    for (i in 1:(nrow(wild.dat) - 1)) {
+      spline_result <- as.data.frame(spline(wild.dat$time[i:(i+1)], wild.dat$size[i:(i+1)], n = n)) # 50 intermediate points
+      spline_points <- rbind(spline_points, spline_result %>% map_df(rev))
+    }
+    wild.dat.spline <- data.frame(pop=rep("Wild", dim(spline_points)[1]), time=spline_points$x, size=spline_points$y)
+    
+    # final compilation
+    mod.dat.spline <- rbind(anc.dat.spline, tv.dat.spline, wild.dat.spline)
+    mod.dat.straight <- rbind(anc.dat.straight, TV.dat.straight, Wild.dat.straight)
   }
-  
-  mod.dat <- rbind(anc.dat, tv.dat, wild.dat)
-  
-  
-  # trying alternative to spline fitting the points (make the connections straighter)
-  # ancestral
-  grid <- data.frame(time = numeric(), size = numeric())
-  for (i in 1:(nrow(anc.dat) - 1)) {
-    temp <- data.frame(time=seq(anc.dat$time[i], anc.dat$time[(i+1)], length.out=n),
-                       size=seq(anc.dat$size[i], anc.dat$size[(i+1)], length.out=n))
-    grid <- rbind(grid, temp)
-  }
-  anc.dat.straight <- data.frame(pop=rep("Anc", dim(grid)[1]), time=grid$time, size=grid$size)
-  
-  # TV
-  grid <- data.frame(time = numeric(), size = numeric())
-  for (i in 1:(nrow(tv.dat) - 1)) {
-    temp <- data.frame(time=seq(tv.dat$time[i], tv.dat$time[(i+1)], length.out=n),
-                       size=seq(tv.dat$size[i], tv.dat$size[(i+1)], length.out=n))
-    grid <- rbind(grid, temp)
-  }
-  TV.dat.straight <- data.frame(pop=rep("TV", dim(grid)[1]), time=grid$time, size=grid$size)
-  
-  # Wild
-  grid <- data.frame(time = numeric(), size = numeric())
-  for (i in 1:(nrow(wild.dat) - 1)) {
-    temp <- data.frame(time=seq(wild.dat$time[i], wild.dat$time[(i+1)], length.out=n),
-                       size=seq(wild.dat$size[i], wild.dat$size[(i+1)], length.out=n))
-    grid <- rbind(grid, temp)
-  }
-  Wild.dat.straight <- data.frame(pop=rep("Wild", dim(grid)[1]), time=grid$time, size=grid$size)
-  
-  
-  # Geom_smooth fitting is rough... adding spline fit points for smoother plotting
-  # ancestral
-  spline_points <- data.frame(time = numeric(), size = numeric())
-  for (i in 1:(nrow(anc.dat) - 1)) {
-    spline_result <- as.data.frame(spline(anc.dat$time[i:(i+1)], anc.dat$size[i:(i+1)], n = n)) # 50 intermediate points
-    spline_points <- rbind(spline_points, spline_result %>% map_df(rev))
-  }
-  anc.dat.spline <- data.frame(pop=rep("Anc", dim(spline_points)[1]), time=spline_points$x, size=spline_points$y)
-
-  # TV
-  spline_points <- data.frame(time = numeric(), size = numeric())
-  for (i in 1:(nrow(tv.dat) - 1)) {
-    spline_result <- as.data.frame(spline(tv.dat$time[i:(i+1)], tv.dat$size[i:(i+1)], n = n)) # 50 intermediate points
-    spline_points <- rbind(spline_points, spline_result %>% map_df(rev))
-  }
-  tv.dat.spline <- data.frame(pop=rep("TV", dim(spline_points)[1]), time=spline_points$x, size=spline_points$y)
-
-  # Wild
-  spline_points <- data.frame(time = numeric(), size = numeric())
-  for (i in 1:(nrow(wild.dat) - 1)) {
-    spline_result <- as.data.frame(spline(wild.dat$time[i:(i+1)], wild.dat$size[i:(i+1)], n = n)) # 50 intermediate points
-    spline_points <- rbind(spline_points, spline_result %>% map_df(rev))
-  }
-  wild.dat.spline <- data.frame(pop=rep("Wild", dim(spline_points)[1]), time=spline_points$x, size=spline_points$y)
-
-  # final compilation
-  mod.dat.spline <- rbind(anc.dat.spline, tv.dat.spline, wild.dat.spline)
-  mod.dat.straight <- rbind(anc.dat.straight, TV.dat.straight, Wild.dat.straight)
-  
 }
 
-# Peter data approximation
-smc <- data.frame(pop=c(rep("Anc", 3), rep("TV", 4), rep("Wild", 4)), 
-                  time=c(c(100000, 7582, 5359), c(5359, 1349, 361, 0), c(5359, 3190, 492, 0)), 
-                  size=c(c(100000, 8275, 12181), c(12181, 1768, 59628, 40000), c(12181, 26451, 10207, 20000)))
+
+# Peter SMC++ data 
+smc <- read.csv("~/Documents/Work MacBook/Research/paper_code/H_annuus_demography/H_annuus_final/data/PS_SMC_outputs/LRE_ENA_split_15k_wInvar_noMask_nicelyFitted.csv")
+smc.Tdiv <- max((smc %>% filter(label=="ENA"))$x)
+smc <- smc %>% 
+  mutate(pop = case_when(label == "ENA" ~ "Wild", label == "LRE" ~ "Traditional Varieties")) %>% 
+  mutate(pop = if_else(x >= smc.Tdiv, "Ancestral", pop))
+
+mod.dat.full <- mod.dat.full %>% mutate(time = if_else(time < 100, time+100, time))
+mod.dat.full$method <- "Moments"
+
+# names(smc)[2:3] <- c("time", "size")
+# smc$model <- NA
+# smc$Tmig_WildTV <- NA
+# smc$method <- "SMC++"
+# mod.dat.all <- rbind(mod.dat.full, smc %>% dplyr::select(pop, time, size, Tmig_WildTV, model, method))
 
 # plotting
-ggplot(data=mod.dat, aes(x=time+1, y=size, color=pop))+
-  # scale_y_continuous(limit=c(0,(max(mod.dat$size)*1.2)))+
-  # geom_smooth(method="glm", formula=y ~ poly(x, 4), linewidth=1, alpha=0.5, se=F)+
-  geom_line(linewidth=1, alpha=0.5)+
-  geom_line(data=smc, aes(x=time+1, y=size, color=pop), linewidth=0.5, alpha=0.5, linetype=2)+
-  geom_point(data=smc, aes(x=time+1, y=size, color=pop), alpha=0.5, shape=0)+
-  geom_point(data=mod.dat, aes(x=time+1, y=size, color=pop), shape=15)+
-  scale_x_log10()+
-  scale_y_log10(limits=c(1e1,1e6))+
+optim.models <-
+ggplot(data=mod.dat.full)+
+  geom_line(data=smc, aes(x=x+1, y=y, group=pop, color=pop), linetype=2, linewidth=0.5)+
+  geom_line(data=mod.dat.full, aes(x=time, y=size, color=pop), linewidth=1, alpha=0.5)+
+  geom_point(data=mod.dat.full, aes(x=time, y=size, color=pop), shape=15)+
+  scale_color_manual(values=c("brown3",  "skyblue2", "green3"))+
+  scale_x_log10(limits=c(1e2,NA), labels = label_number_auto())+
+  scale_y_log10(breaks=c(10,100,1000,10000,100000,1000000), , labels = label_number_auto())+
   xlab("Years Before Present")+
   ylab("Effective Population Size (Ne)")+
   annotation_logticks()+
-  geom_vline(xintercept = model$Tmig_WildTV, linetype=3, color="gray50")+
+  geom_vline(data=mod.dat.full, aes(xintercept = Tmig_WildTV), linetype=3, color="gray50")+
+  facet_wrap(~model)+
   theme_bw()+
-  theme(text = element_text(size=12), legend.position = "right", aspect.ratio=0.75,
+  theme(legend.position = "right", aspect.ratio=0.75, text = element_text(size=14),
+        panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        plot.background = element_rect(fill="white"), axis.line = element_line(colour = "black"))+
+  labs(color = "Population Group", linetype = "Software")
+
+print(optim.models)
+
+if (self_filter == F) {
+  init_param_file <- sprintf("%s/parameters/AIC_optimized_models_self&outcross.jpeg", wd)
+}
+
+if (self_filter == T) {
+  init_param_file <- sprintf("%s/parameters/AIC_optimized_models_self.jpeg", wd)
+}
+
+jpeg(init_param_file, units="in", res=1e3, width=15, height=7.5)
+print(optim.models)
+dev.off()
+
+
+
+
+### beginning parameter sets for each model ###
+init_params <- read.csv(sprintf("%sH_annuus_final/data/moments_initparams.csv", root_wd))
+init_params <- init_params %>% 
+  mutate(pop = case_when(
+    pop == "anc" ~ "Ancestral",
+    pop == "wild" ~ "Wild",
+    pop == "TV" ~ "Traditional Varieties",
+  )) %>% 
+  mutate(ANC_EXP = case_when(
+    ANC_EXP == "no_exp" ~ "No Ancestral Expansion",
+    ANC_EXP == "exp" ~ "Ancestral Expansion"
+  )) %>% 
+  mutate(TV_SHELF = case_when(
+    TV_SHELF == "no_shelf" ~ "Post-Domestication Contraction",
+    TV_SHELF == "shelf" ~ "Post-Domestication Stability"
+  )) %>% 
+  mutate(TV_EXP = case_when(
+    TV_EXP == "no_exp" ~ "Contraction",
+    TV_EXP == "exp" ~ "Contraction and Expansion",
+    TV_EXP == "bottle" ~ "Bottleneck",
+    TV_EXP == "exp_con" ~ "Expansion and Contraction"
+  ))
+  
+
+jpeg(sprintf("%s/parameters/apriori_model_startparameters.jpeg", wd), units="in", res=1e3, width=15, height=7.5)
+ggplot(data=init_params)+
+  geom_line(data=smc, aes(x=x+1, y=y, group=pop, color=pop), linetype=2, linewidth=0.5)+
+  geom_line(data=init_params, aes(x=time+100, y=size, color=pop), linewidth=1, alpha=0.5)+
+  geom_point(data=init_params, aes(x=time+100, y=size, color=pop), shape=15)+
+  facet_grid(ANC_EXP ~ TV_SHELF * TV_EXP)+
+  scale_color_manual(values=c("brown3",  "skyblue2", "green3"))+
+  scale_x_log10(limits=c(1e2,NA))+
+  scale_y_log10(limits=c(1e2,1e6))+
+  xlab("Years Before Present")+
+  ylab("Effective Population Size (Ne)")+
+  geom_vline(data=init_params, aes(xintercept = TMIG_WildTV), linetype=3, color="gray50")+
+  theme_bw()+
+  theme(text = element_text(size=10), legend.position = "right", aspect.ratio=1.25, strip.text.x = element_text(size=6),
+        axis.text.x = element_text(angle = 45, vjust = 0.5, hjust=0.5),
+        panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        plot.background = element_rect(fill="white"), axis.line = element_line(colour = "black"))+
+  labs(color="Population Group")
+dev.off()
+
+
+
+
+### is there something off between SMC++ and PS's CH1 graphic?
+
+ggplot(data=init_params)+
+  geom_line(data=smc %>% filter(pop=="Wild"), aes(x=x+1, y=y, group=pop, color=pop), linetype=2, linewidth=0.5)+
+  theme_bw()+
+  scale_x_log10()+
+  # scale_y_log10(limits=c(1e3,1e5))+
+  theme(text = element_text(size=12), legend.position = "right", aspect.ratio=1,
         panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         plot.background = element_rect(fill="white"), axis.line = element_line(colour = "black"))
+
+
 
 # to get deme plots in terminal below, run this:
 # cd ~/Documents/Research/paper_code/H_annuus_demography/Hannuus_moments_og

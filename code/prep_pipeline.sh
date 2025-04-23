@@ -115,8 +115,8 @@ if [[ $1 == "debug" ]]; then
     model_list=("bi_mig")
     complexity_list=("base") # base hyper
     ancient_exp_list=("anc_noexp")
-    shelf_list=("shelf")
-    TV_exp_list=("TV_noexp")
+    shelf_list=("shelf" "noshelf")
+    TV_exp_list=("TV_bottle" "TV_exp_con")
     selfing_list=("self")
     template_list=("True" "False")
     iter=1 # overwrites earlier declaration
@@ -124,19 +124,19 @@ if [[ $1 == "debug" ]]; then
     maxiter=1
     selfing_all_list=("self")
     mig_epoch_list=("1")
-    pulse_list=("pulse" "none")
+    pulse_list=("none")
 elif [[ $1 == "subset" ]]; then
     model_list=("bi_mig" "uni_mig" "no_mig")
     complexity_list=("hyper")
-    ancient_exp_list=("anc_exp")
+    ancient_exp_list=("anc_exp" "anc_noexp")
     shelf_list=("shelf" "noshelf")
-    TV_exp_list=("TV_exp" "TV_noexp")
+    TV_exp_list=("TV_bottle" "TV_exp_con")
     selfing_list=("self")
     template_list=("True" "False")
     maxiter=1000
     selfing_all_list=("self" "outcross")
     mig_epoch_list=("1")
-    pulse_list=("pulse" "none")
+    pulse_list=("none")
 elif [[ $1 == "full_run" ]]; then
     model_list=("bi_mig" "uni_mig" "no_mig")
     complexity_list=("base" "hyper") # "base" "hyper"
@@ -148,7 +148,7 @@ elif [[ $1 == "full_run" ]]; then
     maxiter=1000
     selfing_all_list=("self" "outcross")
     mig_epoch_list=("1") # if you want to include "2", need to change scribe folder to model_ext_mig below
-    pulse_list=("pulse" "none")
+    pulse_list=("none")
 else
     echo "debug, subset, or full_run?"
     exit
@@ -171,9 +171,9 @@ for model in "${model_list[@]}"; do
             for selfing_all in "${selfing_all_list[@]}"; do
               for mig_epoch in "${mig_epoch_list[@]}"; do
 		for pulse in "${pulse_list[@]}"; do
-                  python ./code/moments_scripts/models/model_ext/model_scribe_options_ext.py $model $complexity $ancient_exp $shelf $TV_exp $selfing $selfing_all $mig_epoch $pulse
-                  python ./code/moments_scripts/models/model_ext/model_scribe_ext.py $model $complexity $ancient_exp $shelf $TV_exp $selfing True $selfing_all $mig_epoch $pulse
-                  python ./code/moments_scripts/models/model_ext/model_scribe_ext.py $model $complexity $ancient_exp $shelf $TV_exp $selfing False $selfing_all $mig_epoch $pulse
+                  python ./code/moments_scripts/models/model_ext/scribe_updates/model_scribe_options_ext.py $model $complexity $ancient_exp $shelf $TV_exp $selfing $selfing_all
+                  python ./code/moments_scripts/models/model_ext/scribe_updates/model_scribe_ext.py $model $complexity $ancient_exp $shelf $TV_exp $selfing True $selfing_all
+                  python ./code/moments_scripts/models/model_ext/scribe_updates/model_scribe_ext.py $model $complexity $ancient_exp $shelf $TV_exp $selfing False $selfing_all
                   sbatch --array=1-$iter ./code/moments_scripts/Hannuus.sh $model $complexity $ancient_exp $shelf $TV_exp $selfing $iter_multiplier $maxiter $selfing_all $save_folder $mig_epoch $pulse
                 done
               done

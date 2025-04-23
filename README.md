@@ -25,6 +25,3 @@
  - Analysis:
     - plotting and analysis of the models is handled by: Hannuus_autoprocess_update.R
         - this script handles aggregating model outputs and can plot outputs for both best converged model (by AIC) and best model by AIC
-
-
- 

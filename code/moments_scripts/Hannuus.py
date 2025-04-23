@@ -6,6 +6,7 @@ import numpy as np # type: ignore
 from socketserver import ThreadingUnixDatagramServer
 import time
 import random
+from collections import defaultdict
 
 # demographic inference libraries. type ignores are for VS Code
 import moments # type: ignore
@@ -42,7 +43,7 @@ pulse = sys.argv[18]
 print("%s model is running" % model)
 
 # load demographic model information
-model_str = str("{model}_{complexity}_{ancient_exp}_{shelf}_{TV_exp}_TV_{selfing}_WildAnc_{selfing_all}_admix_{pulse}".format(model=model, complexity=complexity, ancient_exp=ancient_exp, shelf=shelf, TV_exp=TV_exp, selfing=selfing, selfing_all=selfing_all, pulse=pulse))
+model_str = str("{model}_{complexity}_{ancient_exp}_{shelf}_{TV_exp}_TV_{selfing}_WildAnc_{selfing_all}".format(model=model, complexity=complexity, ancient_exp=ancient_exp, shelf=shelf, TV_exp=TV_exp, selfing=selfing, selfing_all=selfing_all))
 deme_str = str("{wd}/code/moments_scripts/models/model_yamls/{model_str}_model.yaml".format(wd=wd, model_str=model_str))
 deme_options = str("{wd}/code/moments_scripts/models/model_options/{model_str}_options.yaml".format(wd=wd, model_str=model_str))
 
@@ -74,7 +75,20 @@ for i in range(iter): # number of times to iterate and save to df. doing here to
     
     param_names, opt_params, LL = ret
     AIC = 2 * len(opt_params) - 2 * -LL
+    
+    # adjust param_names for possible dupliucates (e.g. 'name' 'name' becomes 'name1' 'name2')
+    name_count = defaultdict(int)
+    unique_names = []
 
+    for name in param_names:
+        name_count[name] += 1
+        if name_count[name] == 1:
+            unique_names.append(name)
+        else:
+            unique_names.append(f"{name}{name_count[name]}")
+
+        param_names = unique_names
+  
     # begin building data to add to existing data file
     row = {'Pair_name': Pair_name, 'model': model} # base information for run
     row.update({param: value for param, value in zip(param_names, opt_params)}) # Add parameter names and values dynamically
@@ -83,6 +97,9 @@ for i in range(iter): # number of times to iterate and save to df. doing here to
 
     # save data
     file_name = "{wd}/data/moments_outputs/{save_folder}/{Pair_name}_{model_str}.txt".format(wd=wd, save_folder=save_folder, Pair_name=Pair_name, model_str=model_str)
+    
+    # adjust param_names for possible duplicates (e.g., 'name' 'name' becomes 'name1' 'name2')
+    
 
     # check if file already exists. if not, create one
     if os.path.exists(file_name):
